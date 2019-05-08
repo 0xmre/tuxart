@@ -5,15 +5,15 @@ def main():
 
     with open('.config','r') as f:
          res = ""
-         res2= ""
          categories = re.compile(r'(#\n)(# (.)*\n)(#\n)')
          contents = f.read()
          res = categories.findall(contents)
+         out = open("output.txt", "a")
          for i in res:
-             print(i[1])
+             out.write(i[1])
+         f.close()
+         out.close()
 
-
-         #print(res2)
 
 if __name__=="__main__":
     main()
