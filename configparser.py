@@ -23,9 +23,9 @@ def categorieslist():
 #          contents = f.read()
 #          res = categories.findall(contents)
 #          for i in res:
-#              globalcontainer.append(i[1])
+#              for y in i:
+#                 globalcontainer.append(i[1][y])
 #          f.close()
-#          out.close()
 
 def main():
     categorieslist()
