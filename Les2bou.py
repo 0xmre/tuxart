@@ -25,3 +25,21 @@ class body_part(string) :
 class param(body) :
     def __init__(self, body) :
         self.body = body
+
+
+
+def NombreUSB() :
+    # TODO: Compte le nombre d'option usb
+    # set left_hand.accessories = usb if usb ­­> 300
+
+
+def Svgmake(x : param) :
+    # TODO: Genere le svg
+
+def main():
+
+
+
+
+if __main__=="__main__"
+    main()
