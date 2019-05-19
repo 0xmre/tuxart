@@ -1,0 +1,5 @@
+PYTHONPATH=/Kconfiglib:$PYTHONPATH python Kconfiglib/examples/print_config_tree.py  ".config"
+
+======== Main menu ========
+
+
