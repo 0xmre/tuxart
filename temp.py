@@ -12,10 +12,13 @@ from kconfiglib import Kconfig, Symbol, Choice, COMMENT, MENU, MenuNode, \
 
 def search_item(node):
     i = 0
-    while node and i<10:
+    while node:
         if isinstance(node.item, Symbol):
-            node.kconfig.load_config()
-            #print(node.item)
+            #node.kconfig.load_config()*
+            for menuitem in node.item.nodes:
+                if menuitem.
+                print(menuitem)
+            #node.help()
 
         if node.list:
             search_item(node.list)
@@ -23,6 +26,7 @@ def search_item(node):
         node = node.next
 
 def main():
+
     kconf = Kconfig(sys.argv[1])
     search_item(kconf.top_node)
     #print(Kconfig.load_config("CONFIG_ETHERNET"))
