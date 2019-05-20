@@ -18,9 +18,11 @@ class body(body_part) :
       self.torso = torso
 
 class body_part(string) :
-    def __init__(self,color,accessories) :
+    def __init__(self,color,accessories,taille,scaling) :
         self.color = color
         self.accessories = accessories
+        self.taille = taille
+        self.scaling = scaling
 
 class param(body) :
     def __init__(self, body) :
