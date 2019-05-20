@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 import sys
 import sysconfig
-import kconfiglib 
+from kconfiglib import Kconfig, Symbol, Choice, COMMENT, MENU, MenuNode, \
+                       BOOL, TRISTATE, HEX, STRING, \
+                       TRI_TO_STR, \
+                       escape, unescape, \
+                       expr_str, expr_value, expr_items, split_expr, \
+                       _ordered_unique, \
+                       OR, AND, \
+                       KconfigError
 
 def search_item(node):
     i = 0
