@@ -36,47 +36,52 @@ def modifCouleurPaupiereGauche(couleur):
     f.write(newSvgFile)
     f.close()
 
-#def modifCouleurPupilleGauche(couleur):
-    #regex= "pupille_gauche"
-    #matches = re.split(regex, newSvgFile)
-    #test_str = matches[1]
-    #print(test_str)
-    #regex= "fill:"
-    #matches = re.split(regex, test_str, 1)
-    #test_str = matches[1]
-    #print(test_str)
-    #regex= ";"
-    #matches = re.split(regex, test_str, 1)
-    #fillToReplace = matches[0]
-    #print(fillToReplace)
-    #fillToReplace = re.escape(fillToReplace)
-    #newFill="#ff0000"
-    #newSvgFile = re.sub(fillToReplace, newFill, newSvgFile)
-
-def modifCouleurOeilGaucheBlanc(couleur):
-    """
-        prend en parametre une couleur pour modifier celle du blanc de l'oeil gauche
-    """
+def modifCouleurPupilleGauche(couleur):
     svgFile = open("tux_mod.svg").read()
-    regex = "oeil_gauche_blanc"
+    regex= "pupille_gauche"
     matches = re.split(regex, svgFile)
+    newSvgFile = matches[0] + regex
     test_str = matches[1]
     regex= "fill:"
     matches = re.split(regex, test_str, 1)
     test_str = matches[1]
+    newSvgFile = newSvgFile + matches[0] + regex
+    if couleur == "rouge" :
+        newSvgFile=newSvgFile+"#ff0000"
+    elif couleur == "bleu":
+        newSvgFile=newSvgFile+"#0000ff"
     regex= ";"
     matches = re.split(regex, test_str, 1)
-    fillToReplace = matches[0]
-    fillToReplace = re.escape(fillToReplace)
-    if couleur == "rouge" :
-        newFill="#ff0000"
-    elif couleur == "bleu":
-        newFill="#0000ff"
-    newSvgFile = re.sub(fillToReplace, newFill, svgFile)
+    newSvgFile=newSvgFile+";"+matches[1]
     newSvgFile.format()
     f=open("tux_mod.svg", "w")
     f.write(newSvgFile)
     f.close()
+
+def modifCouleurOeilGaucheBlanc(couleur):
+    """
+        prend en parametre une couleur en hexa pour modifier celle du blanc de l'oeil gauche
+    """
+    isHexa = re.search("([A-Fa-f0-9]{6})", couleur)
+    if (isHexa):
+        svgFile = open("tux_mod.svg").read()
+        regex = "oeil_gauche_blanc"
+        matches = re.split(regex, svgFile)
+        newSvgFile = matches[0] + regex
+        test_str = matches[1]
+        regex= "fill:"
+        matches = re.split(regex, test_str, 1)
+        test_str = matches[1]
+        newSvgFile = newSvgFile + matches[0] + regex + "#" + couleur
+        regex= ";"
+        matches = re.split(regex, test_str, 1)
+        newSvgFile=newSvgFile+";"+matches[1]
+        newSvgFile.format()
+        f=open("tux_mod.svg", "w")
+        f.write(newSvgFile)
+        f.close()
+    else:
+        print("Mauvaise saisie")
 
 def reinitColor():
     """
@@ -88,15 +93,17 @@ def reinitColor():
     f.close()
 
 reinitColor()
-print("En quelle couleur voulez vous la paupiere gauche ?")
+print("En quelle couleur voulez vous la paupiere gauche ? (bleu ou rouge)")
 couleur=input()
 modifCouleurPaupiereGauche(couleur)
-print("En quelle couleur voulez vous le blanc de l'oeil gauche ?")
+print("En quelle couleur hexadecimale voulez vous le blanc de l'oeil gauche ? (00ff00 par exemple)")
 couleur=input()
 modifCouleurOeilGaucheBlanc(couleur)
+print("En quelle couleur voulez vous la pupille de l'oeil gauche ? (bleu ou rouge)")
+couleur=input()
+modifCouleurPupilleGauche(couleur)
+print("Done.")
 
-#TODO : régler le probleme de la modification de la couleur pour les elements comme la pupille
-#TODO : demander la saisie de la couleur par l'utilisateur, voir même du code hexa de la couleur, mais il faut pouvoir vérifier le format de ce code en hexa
 #TODO : tout traduire en anglais
 #TODO : reinitialiser la couleur de juste la paupiere par exemple
 #TODO : generaliser à toutes les parties du corps
