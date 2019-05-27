@@ -102,8 +102,4 @@ def reinitColor():
 # print("En quelle couleur voulez vous la pupille de l'oeil gauche ? (bleu ou rouge)")
 # couleur=input()
 # modifCouleurPupilleGauche(couleur)
-# print("Done.")
-
-#TODO : tout traduire en anglais
-#TODO : reinitialiser la couleur de juste la paupiere par exemple
-#TODO : generaliser à toutes les parties du corps
+# print("Done."

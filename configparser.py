@@ -1,7 +1,10 @@
 import string
 import re
 
-globalcontainer = {}
+globalcontainer = []
+with open('.config','r') as file:
+    content = file.read()
+    file.close()
 
 def categorieslist():
     with open('.config','r') as f:
@@ -15,41 +18,39 @@ def categorieslist():
          for i in res:
              out.write(i[1]+'\n')
              globalcontainer[i[1]] = []
-             #globalcontainer.append(i[1])
+
          f.close()
          out.close()
 
-def categoriescontent():
+def categoriescontent(CONFIG_target):
     with open('.config','r') as f:
-         #res = ""
-         #catcontent = re.compile(r'(#\n)(# (.)*\n)(#\n)(.)*(\n)\s$')
+
          contents = f.read()
-         #res = categories.findall(contents)
          for key in globalcontainer:
+            #pattern = r"^(" + key + r")(\n#\n)(CONFIG\w+=\w+)"
+            pattern = key + "(\n#\n)(CONFIG\w+)"
+            #patternstring = re.compile(pattern)
+            #respattern = re.findall(pattern, contents, re.MULTILINE)
 
-            print(key)
-            tmp = []
-            #pattern = r"^"+i+r"(.)*\n{0|1}"
-            #print(pattern)
-            #pattern2 = re.compile(r'(^'+globalcontainer[i]+')(.)*(\n{0|1})')
-            pattern2 = re.search(key + '(\n#\n)(.)*(\n)', contents)
-            if pattern2:
-                print("ok")
-            else:
-                print("Eh non")
-            #pattern2 = re.compile(r'(^'+key+')(.)*(\n{0|1})')
+            print(respattern)
+            if CONFIG_target in key:
+                print(key)
+                #for config in pattern:
+                    #tmp.append(pattern[1])
 
-            #option = pattern2.findall(contents)
-            #tmp.append(pattern2.string)
-            #for j in option:
-                 #tmp.append(j)
-                 #globalcontainer[i].append(j[1])
-                 #print(globalcontainer[i])
-                 #for y in subcat.group():
-                    #globalcontainer[i].append(y)
-            print(tmp)
-            globalcontainer[key] = tmp
+                #globalcontainer[key] = tmp
+
+                #print(tmp)
          f.close()
+
+def contentsplit():
+    value = re.split("\n\n",content)
+    globalcontainer.append(value[0])
+    while value[1]:
+        value = re.split("\n\n",value[1])
+        globalcontainer.append(value[0])
+
+
 
 def parseconfig():
     with open('.config', 'r') as f:
@@ -59,8 +60,10 @@ def parseconfig():
 
 def main():
     #categorieslist()
-    #categoriescontent()
+    #categoriescontent("USB")
     #print(globalcontainer)
+    contentsplit()
+    print(globalcontainer)
     parseconfig()
 
 if __name__=="__main__":

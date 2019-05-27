@@ -11,23 +11,33 @@ from kconfiglib import Kconfig, Symbol, Choice, COMMENT, MENU, MenuNode, \
                        OR, AND, \
                        KconfigError
 
-
 def is_CONFIG_FOO_enable(node,FOO):
-    found = False
-
-    while node and not found:
+    global block
+    block=1
+    found=False
+    while node:
         sym = node.item
 
+        if block==0:
+            found=True
+
         if isinstance(sym, Symbol):
-            if FOO in sym.name:
-                if "y" or "m" in sym.str_value:
-                    print(sym.name + "value = " + sym.str_value)
-                    found = True
+            if FOO in sym.name and sym.str_value == "y":
+                print(sym.name + " value = " + sym.str_value)
+                block=block-1
+                found = True
             #else:
                 #  print("#\n# non\n#")
 
-        if node.list:
-            is_CONFIG_FOO_enable(node.list, FOO)
+        if isinstance(sym,Choice) and block==1:
+            pass
+        if isinstance(sym,MenuNode) and block==1:
+            pass
+
+        if node.list and block==1:
+            if is_CONFIG_FOO_enable(node.list, FOO):
+                found=True
+                block=block-1
 
         node = node.next
 
@@ -59,16 +69,17 @@ def search_item(node):
     #print(i)
 
 def main():
-
     kconf = Kconfig(sys.argv[1])
-    print("########################\n\tDEBUT\n#########################")
-    print(kconf.syms.items)
+    print("\n#########################\n\tDEBUT\n#########################\n")
+    #kconf.node_iter()
+    #print(kconf.syms.items())
 
     #search_item(kconf.top_node)
-    #if is_CONFIG_FOO_enable(kconf.top_node, "SGI_IP22"):
-    #    print("C'est incroyalbe")
-    #else:
-    #    print ("fuck")
+    value = is_CONFIG_FOO_enable(kconf.top_node, "SGI_IP22")
+    if value:
+        print("C'est incroyalbe")
+    else:
+        print ("fuck")
 
 
 

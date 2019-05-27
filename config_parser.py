@@ -11,6 +11,12 @@ from kconfiglib import Kconfig, Symbol, Choice, COMMENT, MENU, MenuNode, \
                        OR, AND, \
                        KconfigError
 
+global USBcontainer = []
+
+def configfetch():
+    pass
+
+
 def is_CONFIG_FOO_enable(node,FOO):
     global block
     block=1
@@ -24,10 +30,9 @@ def is_CONFIG_FOO_enable(node,FOO):
         if isinstance(sym, Symbol):
             if FOO in sym.name and sym.str_value == "y":
                 print(sym.name + " value = " + sym.str_value)
-                block=block-1
                 found = True
-            #else:
-                #  print("#\n# non\n#")
+                block=block-1
+
 
         if isinstance(sym,Choice) and block==1:
             pass
@@ -74,12 +79,9 @@ def main():
     #kconf.node_iter()
     #print(kconf.syms.items())
 
-    #search_item(kconf.top_node)
-    value = is_CONFIG_FOO_enable(kconf.top_node, "SGI_IP22")
-    if value:
-        print("C'est incroyalbe")
-    else:
-        print ("fuck")
+
+    is_CONFIG_FOO_enable(kconf.top_node, "SGI_IP22")
+
 
 
 

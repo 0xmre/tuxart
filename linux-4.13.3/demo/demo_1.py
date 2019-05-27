@@ -5,7 +5,7 @@
 
 import sys
 # necessity to add the path for calling module in different folder
-sys.path.insert(0,'/home/eliot/github/TuxArt/') # config_parser & tux_modifier's path
+sys.path.insert(0,'/home/user/TuxArt/') # config_parser & tux_modifier's path
 from config_parser import is_CONFIG_FOO_enable
 from tux_modifier import *
 sys.path.insert(0,'/TuxArt/linux-4.13.3/Kconfiglib/') # kconfiglib's path
@@ -32,6 +32,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-#TODO: Afficher l'image depuis le script ?
-#TODO: Des idées ?
