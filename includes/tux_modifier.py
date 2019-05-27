@@ -92,6 +92,7 @@ def reinitColor():
     f.write(tux)
     f.close()
 
+<<<<<<< Updated upstream:includes/tux_modifier.py
 # reinitColor()
 # print("En quelle couleur voulez vous la paupiere gauche ? (bleu ou rouge)")
 # couleur=input()
@@ -103,3 +104,20 @@ def reinitColor():
 # couleur=input()
 # modifCouleurPupilleGauche(couleur)
 # print("Done."
+=======
+reinitColor()
+print("En quelle couleur voulez vous la paupiere gauche ? (bleu ou rouge)")
+couleur=input()
+modifCouleurPaupiereGauche(couleur)
+print("En quelle couleur hexadecimale voulez vous le blanc de l'oeil gauche ? (00ff00 par exemple)")
+couleur=input()
+modifCouleurOeilGaucheBlanc(couleur)
+print("En quelle couleur voulez vous la pupille de l'oeil gauche ? (bleu ou rouge)")
+couleur=input()
+modifCouleurPupilleGauche(couleur)
+print("Done.")
+
+#TODO : tout traduire en anglais
+#TODO : reinitialiser la couleur de juste la paupiere par exemple
+#TODO : generaliser à toutes les parties du corps
+>>>>>>> Stashed changes:tux_modifier.py

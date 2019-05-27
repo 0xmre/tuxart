@@ -11,11 +11,6 @@ from kconfiglib import Kconfig, Symbol, Choice, COMMENT, MENU, MenuNode, \
                        OR, AND, \
                        KconfigError
 
-global USBcontainer = []
-
-def configfetch():
-    pass
-
 
 def is_CONFIG_FOO_enable(node,FOO):
     global block
@@ -76,20 +71,8 @@ def search_item(node):
 def main():
     kconf = Kconfig(sys.argv[1])
     print("\n#########################\n\tDEBUT\n#########################\n")
-    #kconf.node_iter()
-    #print(kconf.syms.items())
-
 
     is_CONFIG_FOO_enable(kconf.top_node, "SGI_IP22")
-
-
-
-
-    #print(Kconfig.load_config("CONFIG_ETHERNET"))
-    #print(IS_ENABLED("CONFIG_ETHERNET"))
-
-    #kconf = Kconfig(sys.argv[1])
-
 
 
 if __name__=="__main__":
