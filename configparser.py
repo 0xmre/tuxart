@@ -44,11 +44,11 @@ def categoriescontent(CONFIG_target):
          f.close()
 
 def contentsplit():
-    value = re.split("\n\n",content)
-    globalcontainer.append(value[0])
-    while value[1]:
-        value = re.split("\n\n",value[1])
-        globalcontainer.append(value[0])
+    #value = re.split("\n\n",content)
+    #globalcontainer.append(value[0])
+    #while value[1]:
+    value = re.split("\n\n",content,re.X)
+    globalcontainer.append(value)
 
 
 
@@ -64,7 +64,7 @@ def main():
     #print(globalcontainer)
     contentsplit()
     print(globalcontainer)
-    parseconfig()
+    #parseconfig()
 
 if __name__=="__main__":
     main()
