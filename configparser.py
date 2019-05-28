@@ -21,7 +21,7 @@ def filldic(filename):
         contents = file.read()
         file.close()
 
-#Retrieving configuration list from "contents" variable and ordering them by menu names as keys and a list of configurations as values
+#Retrieving configuration list from "contents" variable and ordering them by menu names as keys and corresponding list of configurations as values
 def contentsplit():
     global globalcontainer
     global contents
