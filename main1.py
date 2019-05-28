@@ -1,6 +1,7 @@
 import string
 import re
 import collections
+import configparser
 
 
 class body(body_part) :
@@ -18,9 +19,11 @@ class body(body_part) :
       self.torso = torso
 
 class body_part(string) :
-    def __init__(self,color,accessories) :
+    def __init__(self,color,accessories,taille,scaling) :
         self.color = color
         self.accessories = accessories
+        self.taille = taille
+        self.scaling = scaling
 
 class param(body) :
     def __init__(self, body) :
@@ -30,13 +33,13 @@ class param(body) :
 
 def NombreUSB() :
     # TODO: Compte le nombre d'option usb
-    # set left_hand.accessories = usb if usb ­­> 300
 
 
-def Svgmake(x : param) :
+def svgmake(x : param) :
     # TODO: Genere le svg
 
 def main():
+    pass
 
 
 
