@@ -14,34 +14,48 @@ def initdic():
     contents = ""
     #print("New dictionnary with empty lists has been created : " + str(globalcontainer) + "\n")
 
-#Fill global variable "contents" with the .config file content, arbitrary path can be defined
-def filldic(filename):
+#Returns the number of all configurations in the .config file
+def nbconfig():
+    global globalcontainer
+    count=0
+    for key, values in globalcontainer.items():
+        count += len(values)
+
+    return count
+
+#Retrieving configuration list from "contents" variable and ordering them by menu names as keys and corresponding list of configurations as values
+def filldic(filename = ".config"):
+    global globalcontainer
     global contents
+
     with open(filename,'r') as file:
         contents = file.read()
         file.close()
 
-#Retrieving configuration list from "contents" variable and ordering them by menu names as keys and corresponding list of configurations as values
-def contentsplit():
-    global globalcontainer
-    global contents
-    if contents == "" :
-        print("Firstly execute filldic(filename) with filename as the .config to parse...\n")
-    else:
-        categories = re.split("\n\n",contents)
+    categories = re.split("\n\n",contents)
 
-        for cat in categories:
-            cat = re.split("\n", cat)
-            globalcontainer[cat[1]]=[]
-            for line in range(3,len(cat)):
-                globalcontainer[cat[1]].append(cat[line])
-    print("Dictionnary has been succesfully updated and now has %d configurations...\n" % len(globalcontainer))
+    for cat in categories:
+        cat = re.split("\n", cat)
+        globalcontainer[cat[1]]=[]
+        for line in range(3,len(cat)):
+            globalcontainer[cat[1]].append(cat[line])
+    print("Dictionnary has been succesfully updated and now has %d configurations...\n" % nbconfig())
 
 #Checks if the argument configuration is currently active in this .config file
 def isconfigactive(configname):
     if configname[:1] == '#':
         return False
-    else: return True
+    return True
+
+#Same behaviour as previous method, but can be used for checking configuration value if not inside a loop
+def isconfigenabled(configname):
+    global globalcontainer
+    for key, values in globalcontainer.items():
+        for item in values:
+            if configname == item[:-2] and (item[-1:] == 'y' or item[-1:] == 'm'):
+                return True
+    return False
+
 
 #Returns number of configuration set to symbol for a given configuration menu
 #Symbol values must be either 'y' or 'm'
@@ -58,7 +72,7 @@ def countconfig(symbol, configmenu):
             print("%d configuration set to \'%s\' has been found in \"%s\"...\n" % (counter, symbol,configmenu))
         elif counter > 1:
             print("%d configurations set to \'%s\' have been found in \"%s\"...\n" % (counter, symbol,configmenu))
-        else: print("No configurations set to \'%s\' have been found in \"%s\"...\n" % (symbo, configmenu))
+        else: print("No configurations set to \'%s\' have been found in \"%s\"...\n" % (symbol, configmenu))
         return counter
     else: print("Symbol is currently set to \'%s\' but allowed symbol must be either 'y' or 'm'" % symbol)
 
@@ -77,12 +91,14 @@ def findconfigcat(configname):
 def main():
     #initdic()
     filldic("linux-4.13.3/.config")
-    contentsplit()
-    res = findconfigcat("CONFIG_AUDIT")
 
+    #res = findconfigcat("CONFIG_ARCH_HAS_SG_CHAIN")
+    #res2 = isconfigenabled("CONFIG_ARCH_HAS_SG_CHAIN")
+    #print(res2)
+    #countconfig("y","Library routines")
 
-    res2 = countconfig("m","Library routines")
-
+    for x in globalcontainer:
+        print(x)
 
 
 if __name__=="__main__":
