@@ -229,6 +229,3 @@ def modify_left_palm(hexacolor):
 
 def modify_left_palm_reflection(hexacolor):
     modify(hexacolor, "left_palm_reflection")
-
-reinit()
-modify_left_arm("0f0f0f")
