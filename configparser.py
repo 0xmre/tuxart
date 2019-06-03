@@ -6,15 +6,7 @@ import re
 globalcontainer = {}
 contents = ""
 
-#Initialize global variables
-def initdic():
-    global globalcontainer
-    global contents
-    globalcontainer = {key : [] for key in range(512)}
-    contents = ""
-    #print("New dictionnary with empty lists has been created : " + str(globalcontainer) + "\n")
-
-#Returns the number of all configurations in the .config file
+#Returns the number of configurations in the .config file
 def nbconfig():
     global globalcontainer
     count=0
@@ -41,7 +33,7 @@ def filldic(filename = ".config"):
             globalcontainer[cat[1]].append(cat[line])
     print("Dictionnary has been succesfully updated and now has %d configurations...\n" % nbconfig())
 
-#Checks if the argument configuration is currently active in this .config file
+#Checks if the argument configuration is currently active in this .config file while in a loop  or handling single configurations
 def isconfigactive(configname):
     if configname[:1] == '#':
         return False
@@ -89,7 +81,6 @@ def findconfigcat(configname):
 
 
 def main():
-    #initdic()
     filldic("linux-4.13.3/.config")
 
     #res = findconfigcat("CONFIG_ARCH_HAS_SG_CHAIN")
