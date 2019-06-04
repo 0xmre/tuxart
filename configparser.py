@@ -1,10 +1,13 @@
 import string
 import re
 
+
 #globalcontainer : dictionnary holding pairs {'Configuration menu' : 'list of configurations'}
 #contents : intermediary value holding .config file content in plain text
 globalcontainer = {}
 contents = ""
+n="is not set"
+
 
 #Returns the number of configurations in the .config file
 def nbconfig():
@@ -53,20 +56,21 @@ def isconfigenabled(configname):
 #Symbol values must be either 'y' or 'm'
 def countconfig(symbol, configmenu):
     global globalcontainer
+    global n
     counter = 0
-    if symbol=='y' or symbol=='m':
+    if symbol=='y' or symbol=='m' or symbol=='n':
         for key in globalcontainer:
             if configmenu in key:
                 for item in globalcontainer[key]:
+                    if item[-len(n):] == n:
+                        counter += 1
                     if item[-1:] == symbol:
                         counter += 1
-        if counter == 1:
-            print("%d configuration set to \'%s\' has been found in \"%s\"...\n" % (counter, symbol,configmenu))
-        elif counter > 1:
-            print("%d configurations set to \'%s\' have been found in \"%s\"...\n" % (counter, symbol,configmenu))
-        else: print("No configurations set to \'%s\' have been found in \"%s\"...\n" % (symbol, configmenu))
-        return counter
-    else: print("Symbol is currently set to \'%s\' but allowed symbol must be either 'y' or 'm'" % symbol)
+    return counter
+
+def hexformat(configmenu):
+    res = '%02x%02x%02x' % (countconfig('y',configmenu), countconfig('m',configmenu), countconfig('n',configmenu))
+    return res
 
 #Given the name of a configuration its parent menu will be returned
 def findconfigcat(configname):
