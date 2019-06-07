@@ -2,28 +2,23 @@
 
 if [ -z $1 ]
 then
-  echo "No .config file specified, running now demos with random configurations..."
-  mkdir -p TuxGallery
-    for i in `seq 1 5`;
-  do
-    echo "Tux n$i is preparing..."
-    cd linux-4.13.3
-    make randconfig
-    cd ..
-    mv linux-4.13.3/.config TuxGallery/.config$i
-    python3 main.py TuxGallery/.config$i
-    mv tux_mod.svg TuxGallery/tux_mod$i.svg
-    cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
-  done
-  echo "Generating .gif file..."
-  cd TuxGallery
-  convert -delay 100 -loop 0 tux_mod*.png SuperTux.gif
-
-
-else
+  echo "No .config file specified, looking now for your configuration file...\n"
   mkdir -p PersonalTux
-  echo "parametre : "$1
+  cat /boot/config-$(uname -r) > PersonalTux/.config
+  if [ $? -ne 0 ];then
+    echo ".config not found in /boot, trying in /proc"
+    zcat /proc/config.gz > PersonalTux/.config
+    if [ $? -ne 0 ];then
+    echo "config.gz not found in /proc/config.gz, try passing .config file manually with ""./tuxart.sh [filename]\n"
+  fi
+fi
+    echo "Your custom Tux is getting assembled...\n"
+    python3 main.py PersonalTux/.config
+    mv tux_mod.svg PersonalTux/tux_mod.svg
+else
+  mkdir -p CustomTux
+  echo "Currently running : "$1
   python3 main.py $1
-  mv tux_mod.svg PersonalTux/
-  eog PersonalTux/tux_mod.svg &
+  mv tux_mod.svg CustomTux/
+  eog CustomTux/tux_mod.svg &
 fi
