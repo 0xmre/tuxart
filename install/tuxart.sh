@@ -1,5 +1,5 @@
 #!/bin/sh
-#ffnpeg
+
 if [ -z $1 ]
 then
   echo "No .config file specified, running now demos with random configurations..."
@@ -18,7 +18,7 @@ then
   echo "Generating .gif file..."
   cd TuxGallery
   convert -delay 100 -loop 0 tux_mod*.png SuperTux.gif
-  
+
 
 else
   mkdir -p PersonalTux

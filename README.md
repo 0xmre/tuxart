@@ -1,11 +1,17 @@
 
 ================================= WELCOME TO TUXART ===============================
-v2
+v3
+
+DOWNLAOD AND INSTALL INSTRUCTIONS:
+
+- Open a terminal then type "git clone https://github.com/HommeOursPorc/TuxArt.git"
+- from tuxart/ folder type "sudo pip3 install ."
+
+(pip3 and python3 are needed in order to install and run the program, type sudo apt-get install python3 and sudo apt-get -y install python3-pip)
+
 
                                     EXECUTE ME!!
 
-                          - from TuxArt/ type "./tuxart.sh [.config file]"
+                    - from tuxart/install type "./tuxart.sh [.config file]"
 
 You can find your SuperTux.gif in folder TuxGallery
-
-cairosvg is needed for this script. install cairosvg with pip3 install cairosvg
