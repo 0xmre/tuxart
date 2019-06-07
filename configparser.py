@@ -69,15 +69,9 @@ def countconfig(symbol, configmenu):
     return counter
 
 def hexformat(configmenu):
-    red = countconfig('y',configmenu)
-    green = countconfig('m',configmenu)
-    blue = countconfig('n',configmenu)
-    if red > 255:
-        red = 255
-    if green > 255:
-        green = 255
-    if blue > 255:
-        blue = 255
+    red = countconfig('y',configmenu)%255
+    green = countconfig('m',configmenu)%255
+    blue = countconfig('n',configmenu)%255
     res = '%02x%02x%02x' % (red, green, blue)
     return res
 

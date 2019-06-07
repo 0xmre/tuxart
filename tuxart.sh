@@ -2,24 +2,28 @@
 #ffnpeg
 if [ -z $1 ]
 then
-  echo "pas de parametre"
-  for i in `seq 1`;
+  echo "No .config file specified, running now demos with random configurations..."
+  mkdir -p TuxGallery
+    for i in `seq 1 5`;
   do
     echo "Tux n$i is preparing..."
-    mkdir -p example$i
     cd linux-4.13.3
-    make allnoconfig
+    make randconfig
     cd ..
-    cp linux-4.13.3/.config example$i/.config
-    python main.py example$i/.config
-    mv tux_mod.svg example$i/
-    display example$i/tux_mod.svg &
+    mv linux-4.13.3/.config TuxGallery/.config$i
+    python3 main.py TuxGallery/.config$i
+    mv tux_mod.svg TuxGallery/tux_mod$i.svg
+    cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
   done
-else
-  mkdir -p exempleperso
-  echo "parametre : "$1
-  python main.py $1
-  mv tux_mod.svg exempleperso/
-  display exempleperso/tux_mod.svg &
+  echo "Generating .gif file..."
+  cd TuxGallery
+  convert -delay 100 -loop 0 tux_mod*.png SuperTux.gif
+  
 
+else
+  mkdir -p PersonalTux
+  echo "parametre : "$1
+  python3 main.py $1
+  mv tux_mod.svg PersonalTux/
+  eog PersonalTux/tux_mod.svg &
 fi

@@ -1,11 +1,11 @@
 
 ================================= WELCOME TO TUXART ===============================
-v0.8
+v2
 
                                     EXECUTE ME!!
 
-                          - from TuxArt/ type "./tuxart.sh"
+                          - from TuxArt/ type "./tuxart.sh [.config file]"
 
+You can find your SuperTux.gif in folder TuxGallery
 
- Known issues:
- - errors in modify() method can sometimes crash the program
+cairosvg is needed for this script. install cairosvg with pip3 install cairosvg
