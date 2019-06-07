@@ -3,7 +3,7 @@
 v4
 
 
-![header image](https://raw.github.com/HommeOursPorc/tuxart/tree/master/install/tuxartlogo/tuxartlogo.gif)
+![tux gif](tuxartlogo.gif)
 
 
 This program will fetch for your running Kernel's configuration file and then generate an unique Tux based on the current active configurations on your kernel.
