@@ -11,6 +11,9 @@ An arbitrary kernel configuration file can be passed as argument, output file wi
 
 DOWNLOAD AND INSTALL INSTRUCTIONS:
 
+Open a terminal and type "git clone https://github.com/HommeOursPorc/tuxart"
+
+Then from tuxart/ folder type "pip3 install ." (sudo may be needed in orther to run install) 
 
 (pip3 and python3 are needed in order to install and run the program, type sudo apt-get install python3 and sudo apt-get -y install python3-pip)
 
