@@ -1,6 +1,6 @@
 
 ================================= WELCOME TO TUXART ===============================
-v3
+v4
 
 
 This program will fetch for your running Kernel's configuration file and then generate an unique Tux based on the current active configurations on your kernel.
@@ -10,9 +10,9 @@ The script will fetch in the default folders /boot and /proc for a configuration
 An arbitrary kernel configuration file can be passed as argument, output file will be stored in CustomTux folder
 
 
-DOWNLAOD AND INSTALL INSTRUCTIONS:
+DOWNLOAD AND INSTALL INSTRUCTIONS:
 
-- Open a terminal then type "git clone https://github.com/HommeOursPorc/TuxArt.git"
+- Open a terminal then type "git clone https://github.com/HommeOursPorc/tuxart.git"
 - from tuxart/ folder type "sudo pip3 install ."
 
 (pip3 and python3 are needed in order to install and run the program, type sudo apt-get install python3 and sudo apt-get -y install python3-pip)
@@ -27,5 +27,14 @@ DOWNLAOD AND INSTALL INSTRUCTIONS:
 
 
 EXTRA!
-A special demo is available with tuxartdemogif.sh, you will need a linux-4.13.3 kernel version with Kconfglib in it (it is needed in order to generate multiple random configurations).
-This script will create 5 different Tux and will assemble them in a .gif, you can find your SuperTux.gif in folder PersonalTux
+A special demo is available with ./tuxartdemogif.sh.
+
+
+                                    EXECUTE ME!!
+
+                   - from tuxart/install type "./tuxartdemogif.sh [path to kernel folder] [number of tux]"
+
+
+If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
+Unpack the archive and run ./tuxartdemogif with the path to the archive's folder passed as argument.
+You also define the number of random Tux in your .gif as argument or the script will create by default 5 different Tux and assemble them in a .gif, you can find your SuperTux.gif in the folder PersonalTux

@@ -10,5 +10,6 @@ setup(name='install',
       packages=['install'],
       install_requires=[
           'cairosvg',
+          'kconfiglib',
       ],
       zip_safe=False)
