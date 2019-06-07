@@ -2,7 +2,6 @@
 ================================= WELCOME TO TUXART ===============================
 v4
 
-
 This program will fetch for your running Kernel's configuration file and then generate an unique Tux based on the current active configurations on your kernel.
 
 The script will fetch in the default folders /boot and /proc for a configuration file.
@@ -12,8 +11,6 @@ An arbitrary kernel configuration file can be passed as argument, output file wi
 
 DOWNLOAD AND INSTALL INSTRUCTIONS:
 
-- Open a terminal then type "git clone https://github.com/HommeOursPorc/tuxart.git"
-- from tuxart/ folder type "sudo pip3 install ."
 
 (pip3 and python3 are needed in order to install and run the program, type sudo apt-get install python3 and sudo apt-get -y install python3-pip)
 
