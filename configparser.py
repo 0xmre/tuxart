@@ -69,7 +69,16 @@ def countconfig(symbol, configmenu):
     return counter
 
 def hexformat(configmenu):
-    res = '%02x%02x%02x' % (countconfig('y',configmenu), countconfig('m',configmenu), countconfig('n',configmenu))
+    red = countconfig('y',configmenu)
+    green = countconfig('m',configmenu)
+    blue = countconfig('n',configmenu)
+    if red > 255:
+        red = 255
+    if green > 255:
+        green = 255
+    if blue > 255:
+        blue = 255
+    res = '%02x%02x%02x' % (red, green, blue)
     return res
 
 #Given the name of a configuration its parent menu will be returned
