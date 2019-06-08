@@ -16,11 +16,13 @@ then
     if [ $2 -gt 0 ]
     then
       NBTUX = $2
+      echo "NBTUX value: "$NBTUX
     else
       echo "Only non negative numbers are allowed!"
+      sleep 2
     fi
   fi
-  for i in `seq 1 $NBTUX`};
+  for i in `seq 1 $NBTUX`;
   do
     echo "Tux n$i is preparing..."
     echo "\n"
@@ -32,8 +34,9 @@ then
     mv tux_mod.svg TuxGallery/tux_mod$i.svg
     cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
   done
-  echo "Generating .gif file..."
+  echo "Generating .png grid..."
   cd TuxGallery
-  convert -delay 100 -loop 0 tux_mod*.png SuperTux.gif
-  echo "SuperTux.gif is now available!"
+  montage -density 300 -tile 2x0 -geometry +5+50 -border 10 *.png TuxFamily.png
+  sleep 1
+  echo "TuxFamily.png is now available! Check tuxart/TuxGallery folder"
 fi

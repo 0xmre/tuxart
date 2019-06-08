@@ -7,9 +7,8 @@ setup(name='install',
       author='HommeOursPorc',
       author_email='',
       license='MIT',
-      packages=['install'],
+      packages=['sources'],
       install_requires=[
-          'cairosvg',
           'kconfiglib',
       ],
       zip_safe=False)

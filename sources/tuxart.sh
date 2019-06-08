@@ -2,7 +2,10 @@
 
 if [ -z $1 ]
 then
-  echo "No .config file specified, looking now for your configuration file...\n"
+  echo "No .config file specified...\n"
+  sleep 1
+  echo  "Looking now for your configuration file...\n"
+  sleep 1
   mkdir -p PersonalTux
   cat /boot/config-$(uname -r) > PersonalTux/.config
   if [ $? -ne 0 ];then
@@ -12,9 +15,12 @@ then
     echo "config.gz not found in /proc/config.gz, try passing .config file manually with ""./tuxart.sh [filename]\n"
   fi
 fi
+    echo "Configuration file has been found!\n"
+    sleep 1
     echo "Your custom Tux is getting assembled...\n"
     python3 main.py PersonalTux/.config
     mv tux_mod.svg PersonalTux/tux_mod.svg
+    eog PersonalTux/tux_mod.svg
 else
   mkdir -p CustomTux
   echo "Currently running : "$1
