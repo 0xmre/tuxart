@@ -4,6 +4,35 @@ import re
 import xml.sax
 import xml.dom
 
+def resize(tuxmod, ratio):
+    """
+        takes a ratio in parameters, between 0.5 and 1.5 included, a filename, and resizes the tux accordingly
+    """
+    if ratio>=0.5:
+        if ratio<=1.5:
+            DOMTree = xml.dom.minidom.parse(tuxmod+".svg")
+            f=open(tuxmod+".svg", "w")
+            svg = DOMTree.documentElement
+            gs = svg.getElementsByTagName("g")
+            for g in gs:
+                if g.getAttribute("id")=="layer1":
+                    if g.hasAttribute("transform"):
+                        transform = g.getAttribute("transform")
+                        regex="scale("
+                        regex=re.escape(regex)
+                        matches=re.split(regex, transform, 1)
+                        newTransform=matches[0]+"scale("
+                        regex=" 1)"
+                        regex=re.escape(regex)
+                        transform=matches[1]
+                        matches=re.split(regex, transform, 1)
+                        newTransform=newTransform+str(ratio)+" 1)"+matches[1]
+                        newTransform.format()
+                        g.setAttribute("transform", newTransform)
+            f.write(DOMTree.toprettyxml())
+            f.close()
+
+
 def modify(hexacolor, bodypart):
     """
         modify the bodypart with the color given
