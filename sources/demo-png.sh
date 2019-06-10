@@ -6,6 +6,7 @@ echo
 if [ -d $1 ]
 then
   mkdir -p TuxGallery
+  if [ "$(ls -A TuxGallery/)" ]; then rm TuxGallery/*; fi
   if [ -z $2 ]
   then
     echo -e "No number of random Tux specified, now generating 5 random Tux..."
@@ -33,9 +34,11 @@ then
     mv tux_mod.svg TuxGallery/tux_mod$i.svg
     cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
   done
+
   echo "Generating .png grid..."
   cd TuxGallery
-  montage -density 300 -tile 2x0 -geometry +5+50 -border 10 *.png TuxFamily.png
+
+  montage -density 300 -geometry +5+50 -border 5 tux_mod*.png TuxFamily.png
   sleep 1
   echo "TuxFamily.png is now available! Check tuxart/TuxGallery folder"
 fi
