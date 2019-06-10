@@ -1,31 +1,30 @@
 #!/bin/sh
 NBTUX=5
-echo "Generating random kernels from: "$1
-echo "\n"
+echo -e "Generating random kernels from: "$1
+echo
 
 if [ -d $1 ]
 then
   mkdir -p TuxGallery
   if [ -z $2 ]
   then
-    echo "No number of random Tux specified, now generating 5 random Tux..."
-    echo "\n"
+    echo -e "No number of random Tux specified, now generating 5 random Tux..."
+    echo
   else
-    echo "Now generating $2 Tux!"
-    echo "\n"
+    echo -e "Now generating $2 Tux!"
+    echo
     if [ $2 -gt 0 ]
     then
-      NBTUX = $2
-      echo "NBTUX value: "$NBTUX
+      NBTUX=$2
     else
-      echo "Only non negative numbers are allowed!"
-      sleep 2
+      echo -e "Only non negative numbers are allowed!"
+      sleep 1
     fi
   fi
   for i in `seq 1 $NBTUX`;
   do
-    echo "Tux n$i is preparing..."
-    echo "\n"
+    echo -e "Tux n$i is preparing..."
+    echo
     cd $1
     make randconfig
     cd -
