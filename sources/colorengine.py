@@ -77,13 +77,13 @@ def shadowcolor(rgbstr):
     green = rgbtriplet[1]
     blue = rgbtriplet[2]
     if red>green and red>blue:
-        green= green - (red-green)*3/4
-        blue= blue - (red-blue)*3/4
+        green= green - (red-green)*1/2
+        blue= blue - (red-blue)*1/2
     elif green>blue:
-        blue= blue - (green-blue)*3/4
-        red= red - (green-red)*3/4
+        blue= blue - (green-blue)*1/2
+        red= red - (green-red)*1/2
     else:
-        red= red - (blue-red)*3/4
-        green= green - (blue-green)*3/4
+        red= red - (blue-red)*1/2
+        green= green - (blue-green)*1/2
     res = '%02x%02x%02x' % (int(red),int(green),int(blue))
     return res

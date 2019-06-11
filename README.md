@@ -3,7 +3,7 @@
 v4
 
 
-![tux gif](tuxartlogo.gif)
+![tux gif](SuperTux.gif)
 
 
 This program will fetch for your running Kernel's configuration file and then generate an unique Tux based on the current active configurations on your kernel.
