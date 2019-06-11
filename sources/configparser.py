@@ -1,7 +1,5 @@
 import string
 import re
-import struct
-
 
 #globalcontainer : dictionnary holding pairs {'Configuration menu' : 'list of configurations'}
 #contents : intermediary value holding .config file content in plain text
@@ -69,51 +67,6 @@ def countconfig(symbol, configmenu):
                         counter += 1
     return counter
 
-def hexformat(configmenu):
-    red = countconfig('y',configmenu)%255
-    green = countconfig('m',configmenu)%255
-    blue = countconfig('n',configmenu)%255
-    res = '%02x%02x%02x' % (red, green, blue)
-    return res
-
-def uppercolor(rgbstr,int):
-    rgbtriplet = struct.unpack('BBB',bytes.fromhex(rgbstr))
-    red = rgbtriplet[0]
-    green = rgbtriplet[1]
-    blue = rgbtriplet[2]
-    if red > green & red > blue:
-        green = (green + int)%255
-        blue = (blue + int)%255
-    elif green > blue:
-        red = (red + int)%255
-        blue = (blue + int)%255
-    else:
-        red = (red+int)%255
-        green = (green+int)%255
-
-    res = '%02x%02x%02x' % (red, green, blue)
-    return res
-
-def lowercolor(rgbstr,int):
-    rgbtriplet = struct.unpack('BBB',bytes.fromhex(rgbstr))
-    red = rgbtriplet[0]
-    green = rgbtriplet[1]
-    blue = rgbtriplet[2]
-    if red > green & red > blue:
-        #red = (red+int)%255
-        green = abs((green-int)%255)
-        blue = abs((blue-int)%255)
-    elif green > blue:
-        #red = (red-int)%255
-        green = abs((green-int)%255)
-        blue = abs((blue-int)%255)
-    else:
-        #red = (red+20)%255
-        green = abs((green-int)%255)
-        blue = abs((blue-int)%255)
-
-    res = '%02x%02x%02x' % (red, green, blue)
-    return res
 
 #Given the name of a configuration its parent menu will be returned
 def findconfigcat(configname):

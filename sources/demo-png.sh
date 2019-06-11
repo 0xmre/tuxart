@@ -40,5 +40,5 @@ then
 
   montage -density 300 -geometry +5+50 -border 5 tux_mod*.png TuxFamily.png
   sleep 1
-  echo "TuxFamily.png is now available! Check tuxart/TuxGallery folder"
+  echo "TuxFamily.png is here! Check tuxart/TuxGallery folder"
 fi
