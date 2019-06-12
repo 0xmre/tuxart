@@ -4,6 +4,23 @@ import re
 import xml.sax
 import xml.dom
 
+def accesoire(item):
+
+    DOMTree = parse("tux_mod.svg")
+    f=open("tux_mod.svg", "w")
+    if item=="hat" :
+        svg = DOMTree.documentElement
+        newElement = DOMTree.createElement("image")
+        newElement.setAttribute("xlink:href","hat.png")
+        newElement.setAttribute("x","70")
+        newElement.setAttribute("y","-30")
+        newElement.setAttribute("height","120")
+        newElement.setAttribute("width","140")
+        svg.appendChild(newElement);
+
+    f.write(DOMTree.toprettyxml())
+    f.close()
+
 def resize(tuxmod, ratio):
     """
         takes a ratio in parameters, between 0.5 and 1.5 included, a filename, and resizes the tux accordingly
