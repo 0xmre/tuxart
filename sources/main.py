@@ -105,10 +105,13 @@ def main():
                     tuxmodifier.modify(color1, zone)
         elif "torso" in key:
             color1 = colorengine.hexformat('devices')
+            color2 = colorengine.modifycolor(color1, 100)
             shadow = colorengine.shadowcolor(color1)
             for zone in torso:
                 if 'shadow' in zone:
                     tuxmodifier.modify(shadow, zone)
+                elif 'belly' in zone:
+                    tuxmodifier.modify(color2, zone)
                 else:
                     tuxmodifier.modify(color1, zone)
         elif "left_palm" in key:
