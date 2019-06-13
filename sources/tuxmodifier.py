@@ -5,7 +5,6 @@ import xml.sax
 import xml.dom
 
 def accesoire(item):
-
     DOMTree = parse("tux_mod.svg")
     f=open("tux_mod.svg", "w")
     if item=="hat" :
