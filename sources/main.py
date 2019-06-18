@@ -40,7 +40,7 @@ def main():
     gc = configparser.globalcontainer
 
     # Select the different part to modify
-    # Each body part is assigned to a key word in Menuconfig
+    # Each body part is assigned to a key word in gc
     for key in bodypart:
 
         if "left_eye" in key:

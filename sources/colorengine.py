@@ -1,6 +1,7 @@
 import struct
 import configparser
 
+# Construction of the triplet RGB
 def hexformat(configmenu):
     red = configparser.countconfig('y',configmenu)%255
     green = configparser.countconfig('m',configmenu)%255
@@ -8,7 +9,9 @@ def hexformat(configmenu):
     res = '%02x%02x%02x' % (red,green,blue)
     return res
 
+# Add some modification on the hexa color
 def modifycolor(rgbstr,int):
+    # Reconstructrion of RGB triplet
     rgbtriplet = struct.unpack('BBB',bytes.fromhex(rgbstr))
     red = rgbtriplet[0]
     green = rgbtriplet[1]
@@ -24,8 +27,6 @@ def modifycolor(rgbstr,int):
             blue = (blue + int)%255
         else:
             blue=blue%150
-        # green = (green + int)%255
-        # blue = (blue + int)%255
     elif green > blue:
         if blue <= 150:
             blue = (blue + int)%255
@@ -48,13 +49,13 @@ def modifycolor(rgbstr,int):
             red = (red + int)%255
         else:
             red=red%150
-        # red = (red+int)%255
-        # green = (green+int)%255
 
     res = '%02x%02x%02x' % (abs(red),abs(green),abs(blue))
     return res
 
+# Reduce shadow of the hexa color
 def reflectioncolor(rgbstr):
+    # Reconstructrion of RGB triplet
     rgbtriplet = struct.unpack('BBB',bytes.fromhex(rgbstr))
     red = rgbtriplet[0]
     green = rgbtriplet[1]
@@ -71,11 +72,14 @@ def reflectioncolor(rgbstr):
     res = '%02x%02x%02x' % (int(red),int(green),int(blue))
     return res
 
+# Increase shadow of the hexa color
 def shadowcolor(rgbstr):
+    # Reconstructrion of RGB triplet
     rgbtriplet = struct.unpack('BBB',bytes.fromhex(rgbstr))
     red = rgbtriplet[0]
     green = rgbtriplet[1]
     blue = rgbtriplet[2]
+
     if red>green and red>blue:
         green= green - (red-green)*1/2
         blue= blue - (red-blue)*1/2
