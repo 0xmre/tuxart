@@ -37,7 +37,7 @@ def main():
 
     # gc is now the dictionnary
     gc = configparser.globalcontainer
-
+    resizefactor = 0
 
     # Select the different part to modify
     # Each body part is assigned to a key word in gc
@@ -83,7 +83,7 @@ def main():
                 elif 'shadow' in zone:
                     tuxmodifier.modify(shadow, zone)
                 else:
-                    tuxmodifier.modify(color1, zone)
+                    tuxmodifier.modify(color2, zone)
         elif "head" in key:
             color1 = colorengine.hexformat('system')
             color2 = colorengine.modifycolor(color1,-50)
@@ -152,10 +152,9 @@ def main():
                     tuxmodifier.modify(reflection, zone)
                 else:
                     tuxmodifier.modify(color1, zone)
-    tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
+
     for key in gc:
         resizefactor += configparser.countconfig('y', key)
-
 
 if __name__=="__main__":
     main()

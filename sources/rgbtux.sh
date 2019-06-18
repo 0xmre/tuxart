@@ -6,27 +6,37 @@ then
 
 else
   mkdir -p tuxRGB
+  if [ "$(ls -A tuxRGB/)" ]; then rm tuxRGB/*; fi
   cd $1
   make allyesconfig
+  mv .config allyes.config
+
+  make allnoconfig
+  mv .config allno.config
+
+  make allmodconfig
+  mv .config allmod.config
+
   cd -
-  mv $1/.config tuxRGB/allyes.config
+  mv $1/allyes.config tuxRGB/
+  mv $1/allno.config tuxRGB/
+  mv $1/allmod.config tuxRGB/
+
   python3 main.py tuxRGB/allyes.config
   mv tux_mod.svg tuxRGB/redtux.svg
-  display tuxRGB/redtux.svg &
 
-  cd $1
-  make allnoconfig
-  cd -
-  mv $1/.config tuxRGB/allno.config
   python3 main.py tuxRGB/allno.config
   mv tux_mod.svg tuxRGB/bluetux.svg
-  display tuxRGB/bluetux.svg &
 
-  cd $1
-  make allmodconfig
-  cd -
-  mv $1/.config tuxRGB/allmod.config
   python3 main.py tuxRGB/allmod.config
   mv tux_mod.svg tuxRGB/greentux.svg
-  display tuxRGB/greentux.svg &
+
+  cairosvg tuxRGB/redtux.svg -o tuxRGB/redtux.png
+  cairosvg tuxRGB/greentux.svg -o tuxRGB/greentux.png
+  cairosvg tuxRGB/bluetux.svg -o tuxRGB/bluetux.png
+  cd tuxRGB
+  montage -density 300 -geometry +5+50 -border 5 *.png elemenTux.png
+  display elemenTux.png &
+
+
 fi
