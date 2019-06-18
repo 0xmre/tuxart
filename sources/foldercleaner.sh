@@ -16,3 +16,9 @@ if [ -d tuxRGB/ ]
 then
   rm -r tuxRGB/
 fi
+if [ -d __pycache__/ ]
+then
+  rm -r __pycache__/
+fi
+
+rm *.pyc

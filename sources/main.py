@@ -28,6 +28,7 @@ def main():
     configparser.filldic(filename)
 
     gc = configparser.globalcontainer
+    resizefactor = 0
 
 
 
@@ -143,6 +144,14 @@ def main():
                 else:
                     tuxmodifier.modify(color1, zone)
 
+    for key in gc:
+        resizefactor += configparser.countconfig('y', key)
+
+    print('Resize factor : %d' % resizefactor)
+
+    with open(".env","w") as f:
+        f.write('{}'.format(resizefactor))
+        
 
 if __name__=="__main__":
     main()
