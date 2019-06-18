@@ -1,7 +1,8 @@
 import struct
 import configparser
 
-# Construction of the triplet RGB
+# Construction of the RGB triplet
+# base on the triplet (y,m,n)
 def hexformat(configmenu):
     red = configparser.countconfig('y',configmenu)%255
     green = configparser.countconfig('m',configmenu)%255
@@ -19,34 +20,34 @@ def modifycolor(rgbstr,int):
 
     if red > green and red > blue:
         if green <= 150:
-            green = (green + int)%255
+            green = (green+int)%255
         else:
             green=green%150
 
         if blue <= 150:
-            blue = (blue + int)%255
+            blue = (blue+int)%255
         else:
             blue=blue%150
     elif green > blue:
         if blue <= 150:
-            blue = (blue + int)%255
+            blue = (blue+int)%255
         else:
             blue=blue%150
 
         if red <= 150:
-            red = (red + int)%255
+            red = (red+int)%255
         else:
             red=red%150
 
     else:
-        blue=(blue-100)%255
+        blue=(blue*10)%255
         if green <= 150:
-            green = (green + int)%255
+            green = (green+int)%255
         else:
             green=green%150
 
         if red <= 150:
-            red = (red + int)%255
+            red = (red+int)%255
         else:
             red=red%150
 
@@ -89,5 +90,5 @@ def shadowcolor(rgbstr):
     else:
         red= red - (blue-red)*1/2
         green= green - (blue-green)*1/2
-    res = '%02x%02x%02x' % (int(red),int(green),int(blue))
+    res = '%02x%02x%02x' % (abs(int(red)),abs(int(green)),abs(int(blue)))
     return res
