@@ -152,9 +152,10 @@ def main():
                     tuxmodifier.modify(reflection, zone)
                 else:
                     tuxmodifier.modify(color1, zone)
-    tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
-    for key in gc:
-        resizefactor += configparser.countconfig('y', key)
+
+
+
+        tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
 
 
 if __name__=="__main__":

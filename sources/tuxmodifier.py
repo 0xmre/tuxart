@@ -77,7 +77,7 @@ def reinit():
     """
         go back to the original Tux
     """
-    tux = open("original_tux.svg").read()
+    tux = open("sprays/original_tux.svg").read()
     f=open("tux_mod.svg", "w")
     f.write(tux)
     f.close()
