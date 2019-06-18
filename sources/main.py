@@ -6,7 +6,11 @@ import tuxmodifier
 import colorengine
 import sys
 
-bodypart=[]
+#bodypart=[]
+
+#
+# Declaration of the different body part of the tux
+#
 bodypart = ['head','beak','left_eye','right_eye','body','torso','left_palm','right_palm']
 
 head = ['skin_between_eyes', 'head_skin', 'forehead_reflection', 'right_eyebrows', 'left_eyebrows', ]
@@ -22,16 +26,22 @@ right_palm = ['right_palm_shadow_1', 'right_palm_shadow_2', 'right_palm_shadow_3
 
 
 def main():
+    # If you choose to put your own .config file
     if sys.argv[1]:
         filename = sys.argv[1]
+
     tuxmodifier.reinit()
+
+    # Fill globalcontainer with all options
+    # key: name of the menu, value: configuration with value(y,m,n)
     configparser.filldic(filename)
 
+    # gc is now the dictionnary
     gc = configparser.globalcontainer
     resizefactor = 0
 
-
-
+    # Select the different part to modify
+    # Each body part is assigned to a key word in Menuconfig
     for key in bodypart:
 
         if "left_eye" in key:

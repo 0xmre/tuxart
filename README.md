@@ -38,7 +38,7 @@ You will find your TuxFamily.png in the folder TuxGallery/
 
                                     EXECUTE ME!!
 
-                   - from tuxart/install type "./demo-png.sh [path to kernel folder] [number of tux]"
+                   - from tuxart/sources type "./demo-png.sh [path to kernel folder] [number of tux]"
 
 
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
