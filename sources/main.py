@@ -38,6 +38,7 @@ def main():
 
     # gc is now the dictionnary
     gc = configparser.globalcontainer
+    resizefactor = 0
 
     # Select the different part to modify
     # Each body part is assigned to a key word in gc
@@ -115,10 +116,13 @@ def main():
                     tuxmodifier.modify(color1, zone)
         elif "torso" in key:
             color1 = colorengine.hexformat('devices')
+            color2 = colorengine.modifycolor(color1, 100)
             shadow = colorengine.shadowcolor(color1)
             for zone in torso:
                 if 'shadow' in zone:
                     tuxmodifier.modify(shadow, zone)
+                elif 'belly' in zone:
+                    tuxmodifier.modify(color2, zone)
                 else:
                     tuxmodifier.modify(color1, zone)
         elif "left_palm" in key:
@@ -150,6 +154,14 @@ def main():
                 else:
                     tuxmodifier.modify(color1, zone)
 
+    for key in gc:
+        resizefactor += configparser.countconfig('y', key)
+
+    print('Resize factor : %d' % resizefactor)
+
+    with open(".env","w") as f:
+        f.write('{}'.format(resizefactor))
+        
 
 if __name__=="__main__":
     main()

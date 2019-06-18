@@ -1,8 +1,8 @@
 #!/bin/sh
-
 if [ -z $1 ]
 then
   echo "No .config file specified..."
+  echo
   sleep 1
   echo  "Now looking for your configuration file..."
   echo
@@ -18,10 +18,12 @@ then
       echo "/proc/config.gz not found, try passing .config file manually with './tuxart.sh [filename]'"
     fi
   fi
-  echo
   echo "Configuration file has been found!"
+  echo
   sleep 1
   echo "Your personal Tux is getting assembled..."
+  echo
+  sleep 1
   python3 main.py PersonalTux/.config
   mv tux_mod.svg PersonalTux/tux_mod.svg
   echo "Come and see me in PersonalTux folder!"

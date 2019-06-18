@@ -77,20 +77,3 @@ def findconfigcat(configname):
                 print("Positive match! %s has been found in \"%s\" menu...\n" % (configname, key))
             elif configname in item and isconfigactive(item):
                 print("Similar configurations such as %s has been in found in \"%s\" menu...\n" % (item[:-2], key))
-
-
-
-def main():
-    filldic("linux-4.13.3/.config")
-
-    #res = findconfigcat("CONFIG_ARCH_HAS_SG_CHAIN")
-    #res2 = isconfigenabled("CONFIG_ARCH_HAS_SG_CHAIN")
-    #print(res2)
-    #countconfig("y","Library routines")
-
-    for x in globalcontainer:
-        print(x)
-
-
-if __name__=="__main__":
-    main()

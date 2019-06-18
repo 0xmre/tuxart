@@ -39,7 +39,7 @@ def modifycolor(rgbstr,int):
             red=red%150
 
     else:
-        blue=(blue+100)%255
+        blue=(blue-100)%255
         if green <= 150:
             green = (green + int)%255
         else:

@@ -12,6 +12,7 @@ else
   mv $1/.config tuxRGB/allyes.config
   python3 main.py tuxRGB/allyes.config
   mv tux_mod.svg tuxRGB/redtux.svg
+  display tuxRGB/redtux.svg &
 
   cd $1
   make allnoconfig
@@ -19,6 +20,7 @@ else
   mv $1/.config tuxRGB/allno.config
   python3 main.py tuxRGB/allno.config
   mv tux_mod.svg tuxRGB/bluetux.svg
+  display tuxRGB/bluetux.svg &
 
   cd $1
   make allmodconfig
@@ -26,5 +28,5 @@ else
   mv $1/.config tuxRGB/allmod.config
   python3 main.py tuxRGB/allmod.config
   mv tux_mod.svg tuxRGB/greentux.svg
-
+  display tuxRGB/greentux.svg &
 fi
