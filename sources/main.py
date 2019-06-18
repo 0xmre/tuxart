@@ -6,7 +6,6 @@ import tuxmodifier
 import colorengine
 import sys
 
-#bodypart=[]
 
 #
 # Declaration of the different body part of the tux
@@ -38,7 +37,7 @@ def main():
 
     # gc is now the dictionnary
     gc = configparser.globalcontainer
-    resizefactor = 0
+
 
     # Select the different part to modify
     # Each body part is assigned to a key word in Menuconfig
@@ -153,15 +152,10 @@ def main():
                     tuxmodifier.modify(reflection, zone)
                 else:
                     tuxmodifier.modify(color1, zone)
-
+    tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
     for key in gc:
         resizefactor += configparser.countconfig('y', key)
 
-    print('Resize factor : %d' % resizefactor)
-
-    with open(".env","w") as f:
-        f.write('{}'.format(resizefactor))
-        
 
 if __name__=="__main__":
     main()
