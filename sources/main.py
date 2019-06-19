@@ -38,6 +38,15 @@ def main():
     # gc is now the dictionnary
     gc = configparser.globalcontainer
     resizefactor = 0
+    y=0
+    m=0
+    n=0
+    for i in gc:
+        y += configparser.countconfig("y",i)
+        m += configparser.countconfig("m",i)
+        n += configparser.countconfig("n",i)
+
+    maincololor = '%02x%02x%02x' % (y%255,m%255,n%255)
 
     # Select the different part to modify
     # Each body part is assigned to a key word in gc
@@ -153,14 +162,9 @@ def main():
                 else:
                     tuxmodifier.modify(color1, zone)
 
-<<<<<<< HEAD
 
 
-        tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
-=======
-    for key in gc:
-        resizefactor += configparser.countconfig('y', key)
->>>>>>> b646b676241c36748578b51b564d553c0f5482a6
+        #tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
 
 if __name__=="__main__":
     main()
