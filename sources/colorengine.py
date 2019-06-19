@@ -19,37 +19,28 @@ def modifycolor(rgbstr,int):
     blue = rgbtriplet[2]
 
     if red > green and red > blue:
-        if green <= 150:
-            green = (green+int)%255
-        else:
-            green=green%150
+        if red <= 190:
+            red = (red+65)
+        if (green+int)<151:
+            green = (green+int)%150
+        if (blue+int)<231:
+            blue = (blue+int+20)%230
 
-        if blue <= 150:
-            blue = (blue+int)%255
-        else:
-            blue=blue%150
     elif green > blue:
-        if blue <= 150:
-            blue = (blue+int)%255
-        else:
-            blue=blue%150
-
-        if red <= 150:
-            red = (red+int)%255
-        else:
-            red=red%150
+        if green<=200:
+            green = (green+55)
+        if (blue+int)<231:
+            blue = (blue+int)%230
+        if (red+int)<151:
+            red = (red+int)%150
 
     else:
-        blue=(blue*10)%255
-        if green <= 150:
-            green = (green+int)%255
-        else:
-            green=green%150
+        if blue<=200:
+            blue = (blue+55)
+        if (green+int)<201: green = (green+int)
 
-        if red <= 150:
-            red = (red+int)%255
-        else:
-            red=red%150
+        if (red+int)<201:
+            red = (red+int)%200
 
     res = '%02x%02x%02x' % (abs(red),abs(green),abs(blue))
     return res
@@ -62,14 +53,14 @@ def reflectioncolor(rgbstr):
     green = rgbtriplet[1]
     blue = rgbtriplet[2]
     if red>green and red>blue:
-        green= green + (red-green)*2/3
-        blue= blue + (red-blue)*2/3
+        green= green + (red-green)*1/2
+        blue= blue + (red-blue)*1/2
     elif green>blue:
-        blue=blue + (green-blue)*2/3
-        red= red + (green-red)*2/3
+        blue=blue + (green-blue)*1/2
+        red= red + (green-red)*1/2
     else:
-        red= red + (blue-red)*2/3
-        green= green + (blue-green)*2/3
+        red= red + (blue-red)*1/2
+        green= green + (blue-green)*1/2
     res = '%02x%02x%02x' % (int(red),int(green),int(blue))
     return res
 
@@ -82,13 +73,13 @@ def shadowcolor(rgbstr):
     blue = rgbtriplet[2]
 
     if red>green and red>blue:
-        green= green - (red-green)*1/2
-        blue= blue - (red-blue)*1/2
+        green= green - (red-green)*1/4
+        blue= blue - (red-blue)*1/4
     elif green>blue:
-        blue= blue - (green-blue)*1/2
-        red= red - (green-red)*1/2
+        blue= blue - (green-blue)*1/4
+        red= red - (green-red)*1/4
     else:
-        red= red - (blue-red)*1/2
-        green= green - (blue-green)*1/2
+        red= red - (blue-red)*1/4
+        green= green - (blue-green)*1/4
     res = '%02x%02x%02x' % (abs(int(red)),abs(int(green)),abs(int(blue)))
     return res
