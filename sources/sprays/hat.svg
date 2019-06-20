@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000">
   <title>Exemple simple de figure SVG</title>
-  
- 
-  
-  
-  <image xlink:href="C:\Users\Ziko\Desktop\teeest\hat.png" height="300" width="250" x="540" y="510"/>
+
+
+
+
+  <image xlink:href="hat.png" height="300" width="250" x="540" y="510"/>
 </svg>
