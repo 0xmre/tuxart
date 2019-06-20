@@ -4,19 +4,37 @@ import re
 import xml.sax
 import xml.dom
 
-def addaccessory(item, filename,x,y):
+def addaccessory(item, filename):
+    """
+        takes the name of an item and add it to the specified file
+    """
     DOMTree = parse(filename)
     f=open(filename, "w")
     svg = DOMTree.documentElement
-    newElement = DOMTree.createElement("image")
-    newElement.setAttribute("xlink:href",item)
-    newElement.setAttribute("x",str(x))
-    newElement.setAttribute("y",str(y))
-    newElement.setAttribute("height","120")
-    newElement.setAttribute("width","140")
+    newElement = DOMTree.createElement("g")
+    newElement.setAttribute("id","mark")
     svg.appendChild(newElement);
-
     f.write(DOMTree.toprettyxml())
+    f.close()
+    f=open(filename, "r")
+    regex="<g id=\"mark\"/>"
+    regex=re.escape(regex)
+    matches=re.split(regex, f.read(), 1)
+    tuxSvg1=matches[0]
+    tuxSvg2=matches[1]
+    f.close()
+    f=open("sprays/"+item+".svg", "r")
+    regex="id=\""+item+"\""
+    regex=re.escape(regex)
+    tuxSvg1=tuxSvg1+"<g\n\t\t\t"+regex
+    matches=re.split(regex, f.read(), 1)
+    match=matches[1]
+    regex="<g id=\"mark\"/>"
+    regex=re.escape(regex)
+    matches=re.split(regex, match, 1)
+    f.close()
+    f=open(filename, "w")
+    f.write(tuxSvg1+matches[0]+tuxSvg2)
     f.close()
 
 def resize(tuxmod, ratio):
