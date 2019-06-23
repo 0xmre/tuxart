@@ -1,6 +1,6 @@
 
 ================================= WELCOME TO TUXART ===============================
-v4
+
 
 
 ![tux gif](SuperTux.gif)
@@ -24,21 +24,29 @@ DOWNLOAD AND INSTALL INSTRUCTIONS:
 
                                     EXECUTE ME!!
 
-                    - from tuxart/sources type "./tuxart.sh [.config file]"
+                    - from tuxart/sources type "./tuxart.sh"
+
+- If you want to pass your custom configuration file:
+
+                    - from tuxart/sources type "./tuxart.sh -f [configuration file]"
 
 
+- Type "./tuxart.sh -h" or "./tuxart.sh --help" for help from terminal
 
 
+OPTIONS:
 
-HOW TO GENERATE A GRID OF RANDOM TUX:
-
-Run this script if you already have a linux kernel.*
-You can also define the number of random Tux in your grid as argument or the script will create by default 5 different Tux and assemble them in a grid.
-You will find your TuxFamily.png in the folder TuxGallery/
+Various options are available if you already have a linux kernel.*
+You can either : generate a grid of Tux
+                 generate a .gif of Tux
+                 summon elemenTux ( all configurations set to yes, no or module )
 
                                     EXECUTE ME!!
 
-                   - from tuxart/sources type "./demo-png.sh [path to kernel folder] [number of tux]"
+                   - from tuxart/sources type
+                        ./tuxart.sh --grid [path to kernel folder] [number of tux, default = 4]
+                        ./tuxart.sh --gif [path to kernel folder] [number of tux, default = 4]
+                        ./tuxart.sh --rgb [path to kernel folder]
 
 
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/

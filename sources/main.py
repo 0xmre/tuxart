@@ -169,7 +169,7 @@ def main():
 
 
 
-        #tuxmodifier.addaccessory("sprays/hat.png","tux_mod.svg",70,-30)
+        #tuxmodifier.addaccessory("hat","tux_mod.svg")
 
 if __name__=="__main__":
     main()
