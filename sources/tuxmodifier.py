@@ -4,19 +4,19 @@ import re
 import xml.sax
 import xml.dom
 
-def addaccessory(item, filename):
+def addaccessory(item):
     """
         takes the name of an item and add it to the specified file
     """
-    DOMTree = parse(filename)
-    f=open(filename, "w")
+    DOMTree = parse("tux_mod.svg")
+    f=open("tux_mod.svg", "w")
     svg = DOMTree.documentElement
     newElement = DOMTree.createElement("g")
     newElement.setAttribute("id","mark")
     svg.appendChild(newElement);
     f.write(DOMTree.toprettyxml())
     f.close()
-    f=open(filename, "r")
+    f=open("tux_mod.svg", "r")
     regex="<g id=\"mark\"/>"
     regex=re.escape(regex)
     matches=re.split(regex, f.read(), 1)
@@ -33,7 +33,7 @@ def addaccessory(item, filename):
     regex=re.escape(regex)
     matches=re.split(regex, match, 1)
     f.close()
-    f=open(filename, "w")
+    f=open("tux_mod.svg", "w")
     f.write(tuxSvg1+matches[0]+tuxSvg2)
     f.close()
 
