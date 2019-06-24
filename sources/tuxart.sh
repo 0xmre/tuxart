@@ -5,6 +5,7 @@ NBTUX=4
 
 # Progress number added to progress bar in loop
 progressi=0
+tmp2=0
 
 # delay executing script
 delay()
@@ -174,7 +175,7 @@ then
     do
       progress $tmp "Tux n$i is preparing..."
       cd $2
-      make randconfig > /dev/null
+      make randconfig > /dev/null 2>&1 2>&1
       #Checking if config file has been correctly created
       if [ $? -ne 0 ]
       then
@@ -261,7 +262,7 @@ then
       do
         progress $tmp "Tux n$i is preparing..."
         cd $2
-        make randconfig > /dev/null
+        make randconfig > /dev/null 2>&1 2>&1
         #Checking if config file has been correctly created
         if [ $? -ne 0 ]
         then
@@ -323,15 +324,15 @@ then
 
   # Creating configuration files with all yes, no or module options activated
   progress 10 "Generating all yes configuration"
-  make allyesconfig > /dev/null
+  make allyesconfig > /dev/null 2>&1
   mv .config allyes.config
 
   progress 20 "Generating all no configuration"
-  make allnoconfig > /dev/null
+  make allnoconfig > /dev/null 2>&1
   mv .config allno.config
 
   progress 30 "Generating all active modules configuration"
-  make allmodconfig > /dev/null
+  make allmodconfig > /dev/null 2>&1
   mv .config allmod.config
 
   cd -
