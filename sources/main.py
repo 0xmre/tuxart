@@ -54,21 +54,21 @@ def main():
 
         if "left_eye" in key:
             color1 = colorengine.hexformat('system')
-            color2 = colorengine.modifycolor(color1,30)
-            color3 = colorengine.modifycolor(color1,-30)
+            color2 = colorengine.modifycolor(color1,-55)
+            color3 = colorengine.modifycolor(color1,15)
             reflection = colorengine.reflectioncolor(color1)
             for zone in left_eye:
                 if 'left_pupil' in zone:
-                    tuxmodifier.modify(color1, zone)
+                    tuxmodifier.modify(color2, zone)
                 elif 'reflection' in zone:
                     tuxmodifier.modify(reflection,zone)
                 elif 'white' in zone:
                     tuxmodifier.modify(reflection, zone)
                 else:
-                    tuxmodifier.modify(color2, zone)
+                    tuxmodifier.modify(color1, zone)
         elif "right_eye" in key:
             color1 = colorengine.hexformat('system')
-            color2 = colorengine.modifycolor(color1,-40)
+            color2 = colorengine.modifycolor(color1,-50)
             color3 = colorengine.modifycolor(color1,20)
             reflection = colorengine.reflectioncolor(color1)
             for zone in right_eye:
@@ -77,7 +77,7 @@ def main():
                 elif 'reflection' in zone:
                     tuxmodifier.modify(reflection,zone)
                 elif 'white' in zone:
-                    tuxmodifier.modify(color1, zone)
+                    tuxmodifier.modify(reflection, zone)
                 # elif 'eyelid' in zone:
                 #     tuxmodifier.modify(color3, zone)
                 else:
