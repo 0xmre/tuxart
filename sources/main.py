@@ -3,38 +3,21 @@ import re
 import collections
 import configparser
 import tuxmodifier
-import colorengine
 import sys
-
-
-#
-# Declaration of the different body part of the tux
-#
-bodypart = ['head','beak','left_eye','right_eye','body','torso','left_palm','right_palm']
-
-head = ['skin_between_eyes', 'head_skin', 'forehead_reflection', 'right_eyebrows', 'left_eyebrows', ]
-beak = ['smile', 'beak_shadow_on_eyes', 'beak_bottom_part', 'beak_bottom_part_reflection', 'beak_upper_part', 'beak_upper_part_reflection', 'right_nostril', 'left_nostril', 'beak_right_end']
-left_eye = ['white_left_eye', 'left_pupil', 'left_pupil_reflection', 'left_eyelid']
-right_eye = ['white_right_eye', 'right_pupil', 'right_pupil_reflection_1', 'right_pupil_reflection_2', 'right_eyelid']
-body = ['skin', 'right_leg', 'left_leg', 'right_arm', 'right_arm_reflection', 'neck_reflection', 'skin_reflection', 'right_hand', 'right_hand_reflection_1', 'right_hand_reflection_2', 'left_arm', 'left_arm_reflection']
-torso = ['belly', 'torso_shadow', 'shadow_under_beak', 'chest_left_shadow', 'chest_right_shadow', 'chest_middle_shadow', 'belly_shadow']
-left_palm = ['left_palm', 'left_palm_shadow_1', 'left_palm_shadow_2', 'left_palm_reflection']
-right_palm = ['right_palm_shadow_1', 'right_palm_shadow_2', 'right_palm_shadow_3', 'right_palm', 'right_palm_reflection', 'right_arm_shadow_1', 'right_arm_shadow_2'] # enlever :
-
-
-
 
 def main():
     # If you choose to put your own .config file
     if sys.argv[1]:
         filename = sys.argv[1]
 
+    # Initialize tux_mod.svg
     tuxmodifier.reinit()
 
-    # Fill globalcontainer with all options
+    # Fill dictionnary with configuration file's values
     # key: name of the menu, value: configuration with value(y,m,n)
     configparser.filldic(filename)
 
+<<<<<<< HEAD
     # gc is now the dictionnary
     gc = configparser.globalcontainer
     resizefactor = 0
@@ -168,8 +151,13 @@ def main():
                     tuxmodifier.modify(color1, zone)
 
 
+=======
+    # Painting time!
+    tuxmodifier.tuxcolorizer()
+>>>>>>> 0a2546525c884fce45a692647995f91a23e96dd0
 
-        #tuxmodifier.addaccessory("hat","tux_mod.svg")
+    # Adding accessories
+    tuxmodifier.accessoryhandler()
 
 if __name__=="__main__":
     main()
