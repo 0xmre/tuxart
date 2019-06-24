@@ -19,28 +19,27 @@ def modifycolor(rgbstr,int):
     blue = rgbtriplet[2]
 
     if red > green and red > blue:
-        if red <= 190:
-            red = (red+65)
-        if (green+int)<151:
-            green = (green+int)%150
-        if (blue+int)<231:
-            blue = (blue+int+20)%230
+        if red <201: red = (red+55)
+
+        if (green+int)<201: green = (green+int)%200
+
+        if (blue+int)<231: blue = (blue+int)%230
 
     elif green > blue:
-        if green<=200:
-            green = (green+55)
-        if (blue+int)<231:
-            blue = (blue+int)%230
-        if (red+int)<151:
-            red = (red+int)%150
+        if green<201: green = (green+55)
+
+        if (blue+int)<231: blue = (blue+int)%230
+
+        if (red+int)<151: red = (red+int)%150
+
 
     else:
-        if blue<=200:
-            blue = (blue+55)
-        if (green+int)<201: green = (green+int)
+        if blue<201: blue = (blue+55)
 
-        if (red+int)<201:
-            red = (red+int)%200
+        if (green+int)<201: green = (green+int)%200
+
+        if (red+int)<201: red = (red+int)%200
+
 
     res = '%02x%02x%02x' % (abs(red),abs(green),abs(blue))
     return res
