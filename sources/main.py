@@ -11,7 +11,7 @@ def main():
         filename = sys.argv[1]
 
     # Initialize tux_mod.svg
-    tuxmodifier.reinit()
+    tuxmodifier.tuxinit()
 
     # Fill dictionnary with configuration file's values
     # key: name of the menu, value: configuration with value(y,m,n)
