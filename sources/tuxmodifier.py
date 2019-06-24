@@ -21,8 +21,8 @@ left_palm = ['left_palm', 'left_palm_shadow_1', 'left_palm_shadow_2', 'left_palm
 right_palm = ['right_palm_shadow_1', 'right_palm_shadow_2', 'right_palm_shadow_3', 'right_palm', 'right_palm_reflection', 'right_arm_shadow_1', 'right_arm_shadow_2']
 
 def accessoryhandler():
-    configs = ["CONFIG_FTRACE","CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE","CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE","CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE","CONFIG_ENCRYPTED_KEYS"]
-    items = ["eyepatch","helmet1","helmet2","helmet3","shield"]
+    configs = ["CONFIG_FTRACE","CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE","CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE","CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE","CONFIG_ENCRYPTED_KEYS","CONFIG_USB_USBNET"]
+    items = ["eyepatch","helmet1","helmet2","helmet3","shield","cape"]
 
     for config, item in zip(configs,items):
         if configparser.isconfigenabled(config):
