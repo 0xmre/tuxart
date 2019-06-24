@@ -10,7 +10,7 @@ import colorengine
 # Declaration of the different body part of the tux
 #
 bodypart = ['head','beak','left_eye','right_eye','body','torso','left_palm','right_palm']
-
+# These array are fill with the different part of the tux to modify
 head = ['skin_between_eyes', 'head_skin', 'forehead_reflection', 'right_eyebrows', 'left_eyebrows', ]
 beak = ['smile', 'beak_shadow_on_eyes', 'beak_bottom_part', 'beak_bottom_part_reflection', 'beak_upper_part', 'beak_upper_part_reflection', 'right_nostril', 'left_nostril', 'beak_right_end']
 left_eye = ['white_left_eye', 'left_pupil', 'left_pupil_reflection', 'left_eyelid']
@@ -28,27 +28,27 @@ def accessoryhandler():
         if configparser.isconfigenabled(config):
             addaccessory(item)
 
+# Color every part of the tux
 def tuxcolorizer():
     for key in bodypart:
-
         if "left_eye" in key:
             color1 = colorengine.hexformat('system')
-            color2 = colorengine.modifycolor(color1,30)
-            color3 = colorengine.modifycolor(color1,-30)
+            color2 = colorengine.modifycolor(color1,-30)
+            color3 = colorengine.modifycolor(color1,10)
             reflection = colorengine.reflectioncolor(color1)
             for zone in left_eye:
                 if 'left_pupil' in zone:
-                    modify(color1, zone)
+                    modify(color2, zone)
                 elif 'reflection' in zone:
                     modify(reflection,zone)
                 elif 'white' in zone:
                     modify(reflection, zone)
                 else:
-                    modify(color2, zone)
+                    modify(color1, zone)
         elif "right_eye" in key:
             color1 = colorengine.hexformat('system')
-            color2 = colorengine.modifycolor(color1,-40)
-            color3 = colorengine.modifycolor(color1,20)
+            color2 = colorengine.modifycolor(color1,-30)
+            color3 = colorengine.modifycolor(color1,10)
             reflection = colorengine.reflectioncolor(color1)
             for zone in right_eye:
                 if 'right_pupil' in zone:
@@ -56,11 +56,9 @@ def tuxcolorizer():
                 elif 'reflection' in zone:
                     modify(reflection,zone)
                 elif 'white' in zone:
-                    modify(color1, zone)
-                # elif 'eyelid' in zone:
-                #     modify(color3, zone)
+                    modify(reflection, zone)
                 else:
-                    modify(color3, zone)
+                    modify(color1, zone)
         elif "beak" in key:
             color1 = colorengine.hexformat('river')
             color2 = colorengine.modifycolor(color1,-40)
@@ -71,8 +69,6 @@ def tuxcolorizer():
                     modify(color1,zone)
                 elif 'smile' in zone:
                     modify(colorengine.hexformat('Kernel'), zone)
-                # elif 'reflection' in zone:
-                #     modify(reflection, zone)
                 elif 'shadow' in zone:
                     modify(shadow, zone)
                 else:
@@ -81,7 +77,7 @@ def tuxcolorizer():
             color1 = colorengine.hexformat('sensors')
             color2 = colorengine.modifycolor(color1,25)
             color3 = colorengine.shadowcolor(color2)
-            reflection = colorengine.reflectioncolor(color1)
+            reflection = colorengine.reflectioncolor(color2)
             for zone in head:
                 if 'reflection' in zone:
                     modify(reflection, zone)
@@ -92,18 +88,18 @@ def tuxcolorizer():
                 else:
                     modify(color2, zone)
         elif "body" in key:
-            color1 = colorengine.hexformat('CPU')#Kernel
+            color1 = colorengine.hexformat('CPU')
             color2 = colorengine.modifycolor(color1,20)
-            color3 = colorengine.modifycolor(color1,20)
+            color3 = colorengine.modifycolor(color1,-10)
             shadow = colorengine.shadowcolor(color1)
             reflection = colorengine.reflectioncolor(color1)
             for zone in body:
                 if 'reflection' in zone:
                     modify(reflection, zone)
                 if 'leg' in zone:
-                    modify(color3, zone)
-                elif 'skin' in zone:
                     modify(color2, zone)
+                elif 'skin' in zone:
+                    modify(color3, zone)
                 else:
                     modify(color1, zone)
         elif "torso" in key:
