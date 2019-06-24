@@ -3,6 +3,16 @@ import xml.dom.minidom
 import re
 import xml.sax
 import xml.dom
+import configparser
+
+def accessoryhandler():
+    configs = ["CONFIG_FTRACE","CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE","CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE","CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE","CONFIG_ENCRYPTED_KEYS"]
+    items = ["eyepatch","helmet1","helmet2","helmet3","shield"]
+
+    for config, item in zip(configs,items):
+        if configparser.isconfigenabled(config):
+            addaccessory(item)
+
 
 def addaccessory(item):
     """
@@ -16,6 +26,7 @@ def addaccessory(item):
     svg.appendChild(newElement);
     f.write(DOMTree.toprettyxml())
     f.close()
+
     f=open("tux_mod.svg", "r")
     regex="<g id=\"mark\"/>"
     regex=re.escape(regex)
@@ -23,6 +34,7 @@ def addaccessory(item):
     tuxSvg1=matches[0]
     tuxSvg2=matches[1]
     f.close()
+
     f=open("sprays/"+item+".svg", "r")
     regex="id=\""+item+"\""
     regex=re.escape(regex)
@@ -33,18 +45,19 @@ def addaccessory(item):
     regex=re.escape(regex)
     matches=re.split(regex, match, 1)
     f.close()
+
     f=open("tux_mod.svg", "w")
     f.write(tuxSvg1+matches[0]+tuxSvg2)
     f.close()
 
-def resize(tuxmod, ratio):
+def resize(ratio):
     """
         takes a ratio in parameters, between 0.5 and 1.5 included, a filename, and resizes the tux accordingly
     """
     if ratio>=0.5:
         if ratio<=1.5:
             DOMTree = xml.dom.minidom.parse(tuxmod+".svg")
-            f=open(tuxmod+".svg", "w")
+            f=open("tux_mod.svg", "w")
             svg = DOMTree.documentElement
             gs = svg.getElementsByTagName("g")
             for g in gs:

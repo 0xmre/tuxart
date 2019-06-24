@@ -168,8 +168,8 @@ def main():
                     tuxmodifier.modify(color1, zone)
 
 
+    tuxmodifier.accessoryhandler()
 
-        #tuxmodifier.addaccessory("hat","tux_mod.svg")
 
 if __name__=="__main__":
     main()
