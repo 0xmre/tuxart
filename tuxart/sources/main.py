@@ -6,6 +6,7 @@ import tuxmodifier
 import sys
 
 def main():
+    
     # If you choose to put your own .config file
     if sys.argv[1]:
         filename = sys.argv[1]

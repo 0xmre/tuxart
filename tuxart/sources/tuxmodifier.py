@@ -5,6 +5,13 @@ import xml.sax
 import xml.dom
 import configparser
 import colorengine
+import os
+
+
+# Path to local files
+path = os.path.dirname(os.path.realpath(__file__))
+pathtomod = os.path.join(path, "tux_mod.svg")
+
 
 #
 # Declaration of the different body part of the tux
@@ -25,7 +32,7 @@ right_palm = ['right_palm_shadow_1', 'right_palm_shadow_2', 'right_palm_shadow_3
 def accessoryhandler():
     # index in both lists links an item with a configuration
     configs = ["CONFIG_FTRACE","CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE","CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE","CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE","CONFIG_ENCRYPTED_KEYS","CONFIG_USB_USBNET"]
-    items = ["eyepatch","helmet1","helmet2","helmet3","shield","cape","glasses1","glasses11"]
+    items = ["eyepatch","helmet1","helmet2","helmet3","shield","cape"]
 
     for config, item in zip(configs,items):
         if configparser.isconfigenabled(config):
@@ -150,8 +157,12 @@ def addaccessory(item):
     """
         takes the name of an item and add it to the specified file
     """
-    DOMTree = parse("tux_mod.svg")
-    f=open("tux_mod.svg", "w")
+
+    global pathtomod
+    global path
+
+    DOMTree = parse(pathtomod)
+    f=open(pathtomod, "w")
     svg = DOMTree.documentElement
     newElement = DOMTree.createElement("g")
     newElement.setAttribute("id","mark")
@@ -159,7 +170,7 @@ def addaccessory(item):
     f.write(DOMTree.toprettyxml())
     f.close()
 
-    f=open("tux_mod.svg", "r")
+    f=open(pathtomod, "r")
     regex="<g id=\"mark\"/>"
     regex=re.escape(regex)
     matches=re.split(regex, f.read(), 1)
@@ -167,7 +178,8 @@ def addaccessory(item):
     tuxSvg2=matches[1]
     f.close()
 
-    f=open("sprays/"+item+".svg", "r")
+    pathtoitem = os.path.join(path, "sprays/")
+    f=open(pathtoitem+item+".svg", "r")
     regex="id=\""+item+"\""
     regex=re.escape(regex)
     tuxSvg1=tuxSvg1+"<g\n\t\t\t"+regex
@@ -178,7 +190,7 @@ def addaccessory(item):
     matches=re.split(regex, match, 1)
     f.close()
 
-    f=open("tux_mod.svg", "w")
+    f=open(pathtomod, "w")
     f.write(tuxSvg1+matches[0]+tuxSvg2)
     f.close()
 
@@ -187,8 +199,10 @@ def modify(hexacolor, bodypart):
     """
         modify the bodypart with the color given
     """
-    DOMTree = xml.dom.minidom.parse("tux_mod.svg")
-    f=open("tux_mod.svg", "w")
+    global pathtomod
+
+    DOMTree = xml.dom.minidom.parse(pathtomod)
+    f=open(pathtomod, "w")
     svg = DOMTree.documentElement
     paths = svg.getElementsByTagName("path")
     for path in paths:
@@ -213,7 +227,10 @@ def tuxinit():
     """
         go back to the original Tux
     """
-    tux = open("sprays/original_tux.svg").read()
-    f=open("tux_mod.svg", "w")
+    global path
+    global pathtomod
+    pathtotux = os.path.join(path, "sprays/original_tux.svg")
+    tux = open(pathtotux).read()
+    f=open(pathtomod, "w")
     f.write(tux)
     f.close()

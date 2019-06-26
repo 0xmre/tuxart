@@ -52,7 +52,7 @@ then
   progress 10 "Now looking for your configuration file..."
 
   # Creating folder for personal tux and personal kernel configuration file
-  mkdir -p ~/Picture/PersonalTux
+  mkdir -p ~/Pictures/PersonalTux
   progress 20 "Creating PersonalTux folder..."
 
   # Looking if .config is in /boot/config-***
@@ -77,7 +77,7 @@ then
   progress 50 "Your personal Tux is getting assembled..."
 
   # Calling main function. Tux generator is on!
-  python3 sources/main.py ~/Pictures/PersonalTux/.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/PersonalTux/.config
 
   # Checking if previous function produced errors
   if [ $? -ne 0 ]
@@ -89,8 +89,8 @@ then
   progress 85 "Personal Tux successfully created..."
 
   # Moving tux in PersonalTux folder
-  mv tux_mod.svg ~/Pictures/PersonalTux/tux_mod.svg
-  progress 99 "Your Tux is available in PersonalTux folder..."
+  mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/PersonalTux/tux_mod.svg
+  progress 99 "Your Tux is available in ~/Pictures/PersonalTux..."
 
   # Ending the job!
   timeout 10 display ~/Pictures/PersonalTux/tux_mod.svg &
@@ -108,13 +108,13 @@ then
   progress 10 "Creating Tux based on : "$2
 
   # Creating custom tux folder
-  mkdir -p CustomTux
+  mkdir -p ~/Pictures/CustomTux
   progress 20 "Creating CustomTux folder..."
 
   progress 50 "Your custom Tux is getting assembled..."
 
   # Calling main fonction, tux generator is on!
-  python3 main.py $2
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py $2
   if [ $? -ne 0 ]
   then
     echo "\nFailed to create CustomTux..."
@@ -123,11 +123,11 @@ then
   progress 75 "Custom Tux successfully created..."
 
   # Moving Tux to custom folder
-  mv tux_mod.svg CustomTux/tux_mod.svg
-  progress 85 "   Your Tux is available in CustomTux folder..."
+  mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/CustomTux/tux_mod.svg
+  progress 85 "   Your Tux is available in ~/Pictures/CustomTux..."
 
   # timeout 10 displaying and terminating the job
-  timeout 10 display CustomTux/tux_mod.svg &
+  timeout 10 display ~/Pictures/CustomTux/tux_mod.svg &
   progress 100
 
 # Checking if grid parameter is chosen
@@ -145,11 +145,11 @@ then
   if [ -d $2 ]
   then
     # Creating folder container for random tuxes
-    mkdir -p TuxGallery
+    mkdir -p ~/Pictures/TuxGallery
     progress 10 "Creating TuxGallery folder..."
 
     # Cleaning folder if it's full
-    if [ "$(ls -A TuxGallery/)" ]; then rm TuxGallery/*; fi
+    if [ "$(ls -A ~/Pictures/TuxGallery/)" ]; then rm ~/Pictures/TuxGallery/*; fi
 
     # Checking if number of tux to produce has been specified
     if [ -z $3 ]
@@ -187,10 +187,10 @@ then
       #Incrementing progres bar
       tmp=`echo "tmp=$tmp+$progressi;tmp" | bc`
       progress $tmp "randomTux n$i is getting assembled..."
-      mv $2/.config TuxGallery/.config$i
+      mv $2/.config ~/Pictures/TuxGallery/.config$i
 
       # Calling main function! Tux generator is on!
-      python3 main.py TuxGallery/.config$i
+      python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
       if [ $? -ne 0 ]
       then
         echo -e "\nFailed to create randomTux..."
@@ -198,8 +198,8 @@ then
       fi
 
       # Placing a copy of the Tux in TuxGallery folder in both format .png and .svg
-      mv tux_mod.svg TuxGallery/tux_mod$i.svg
-      cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
+      mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/TuxGallery/tux_mod$i.svg
+      cairosvg ~/Pictures/TuxGallery/tux_mod$i.svg -o ~/Pictures/TuxGallery/tux_mod$i.png
       tmp=`echo "tmp=$tmp+$progressi;tmp" | bc`
       progress $tmp "randomTux n$i is ready!"
 
@@ -207,11 +207,11 @@ then
 
     # Creating grid of tuxes
     progress 90 "Generating .png grid..."
-    montage -density 300 -geometry +5+50 -border 5 TuxGallery/tux_mod*.png TuxGallery/TuxFamily.png
+    montage -density 300 -geometry +5+50 -border 5 ~/Pictures/TuxGallery/tux_mod*.png ~/Pictures/TuxGallery/TuxFamily.png
     progress 99 "TuxFamily.png is here! Check TuxGallery folder"
 
     # Displaying image for 10 seconds
-    timeout 10 display TuxGallery/TuxFamily.png &
+    timeout 10 display ~/Pictures/TuxGallery/TuxFamily.png &
     progress 100
 
 
@@ -232,11 +232,11 @@ then
     if [ -d $2 ]
     then
       # Creating folder container for random tuxes
-      mkdir -p TuxGallery
+      mkdir -p ~/Pictures/TuxGallery
       progress 10 "Creating TuxGallery folder..."
 
       # Cleaning folder if it's full
-      if [ "$(ls -A TuxGallery/)" ]; then rm TuxGallery/*; fi
+      if [ "$(ls -A ~/Pictures/TuxGallery/)" ]; then rm ~/Pictures/TuxGallery/*; fi
 
       # Checking if number of tux to produce has been specified
       if [ -z $3 ]
@@ -274,10 +274,10 @@ then
         #Incrementing progres bar
         tmp=`echo "tmp=$tmp+$progressi;tmp" | bc`
         progress $tmp "randomTux n$i is getting assembled..."
-        mv $2/.config TuxGallery/.config$i
+        mv $2/.config ~/Pictures/TuxGallery/.config$i
 
         # Calling main function! Tux generator is on!
-        python3 main.py TuxGallery/.config$i
+        python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
         if [ $? -ne 0 ]
         then
           echo -e "\nFailed to create randomTux..."
@@ -285,8 +285,8 @@ then
         fi
 
         # Placing a copy of the Tux in TuxGallery folder in both format .png and .svg
-        mv tux_mod.svg TuxGallery/tux_mod$i.svg
-        cairosvg TuxGallery/tux_mod$i.svg -o TuxGallery/tux_mod$i.png
+        mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/TuxGallery/tux_mod$i.svg
+        cairosvg ~/Pictures/TuxGallery/tux_mod$i.svg -o ~/Pictures/TuxGallery/tux_mod$i.png
         tmp=`echo "tmp=$tmp+$progressi;tmp" | bc`
         progress $tmp "randomTux n$i is ready!"
 
@@ -294,11 +294,11 @@ then
 
       # Creating grid of tuxes
       progress 90 "Generating .png grid..."
-      convert -delay 100 -loop 0 TuxGallery/tux_mod*.png TuxGallery/SuperTux.gif
+      convert -delay 100 -loop 0 ~/Pictures/TuxGallery/tux_mod*.png ~/Pictures/TuxGallery/SuperTux.gif
       progress 99 "SuperTux.gif is here! Check TuxGallery folder"
 
       # Displaying image for 10 seconds
-      display TuxGallery/SuperTux.gif &
+      display ~/Pictures/TuxGallery/SuperTux.gif &
       progress 100
 
 
@@ -309,7 +309,7 @@ then
 elif [ $1 = "--rgb" ]
 then
   progress 5 "Creating tuxRGB Folder"
-  mkdir -p tuxRGB
+  mkdir -p ~/Pictures/tuxRGB
 
   # Control error
   if [ -z $2 ]
@@ -319,7 +319,7 @@ then
   fi
 
   # Cleaning tuxRGB folder if not empty
-  if [ "$(ls -A tuxRGB/)" ]; then rm tuxRGB/*; fi
+  if [ "$(ls -A ~/Pictures/tuxRGB/)" ]; then rm ~/Pictures/tuxRGB/*; fi
   cd $2
 
   # Creating configuration files with all yes, no or module options activated
@@ -337,43 +337,43 @@ then
 
   cd -
   progress 40 "Moving new configuration files"
-  mv $2/allyes.config tuxRGB/
-  mv $2/allno.config tuxRGB/
-  mv $2/allmod.config tuxRGB/
+  mv $2/allyes.config ~/Pictures/tuxRGB/
+  mv $2/allno.config ~/Pictures/tuxRGB/
+  mv $2/allmod.config ~/Pictures/tuxRGB/
 
   # Generating tuxes frmo allyesconfig, allnoconfig and allmodconfig
   progress 50 "Generating Fire Tux"
-  python3 main.py tuxRGB/allyes.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allyes.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Fire Tux..."
     exit 1
   fi
-  mv tux_mod.svg tuxRGB/redtux.svg
+  mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/tuxRGB/redtux.svg
 
   progress 60 "Generating Aqua Tux"
-  python3 main.py tuxRGB/allno.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allno.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Aqua Tux..."
     exit 1
   fi
-  mv tux_mod.svg tuxRGB/bluetux.svg
+  mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/tuxRGB/bluetux.svg
 
   progress 70 "Generating Leaf Tux"
-  python3 main.py tuxRGB/allmod.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allmod.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Leaf Tux..."
     exit 1
   fi
-  mv tux_mod.svg tuxRGB/greentux.svg
+  mv ~/.local/lib/python3.7/site-packages/sources/tux_mod.svg ~/Pictures/tuxRGB/greentux.svg
 
   # Displaying generated tuxes for 10 seconds
   progress 95 "Summoning elemenTux!"
-  timeout 10 display tuxRGB/redtux.svg &
-  timeout 10 display tuxRGB/greentux.svg &
-  timeout 10 display tuxRGB/bluetux.svg &
+  timeout 10 display ~/Pictures/tuxRGB/redtux.svg &
+  timeout 10 display ~/Pictures/tuxRGB/greentux.svg &
+  timeout 10 display ~/Pictures/tuxRGB/bluetux.svg &
 
   progress 100
 
@@ -382,24 +382,24 @@ elif [ $1 = "-h" -o $1 = "--help" ]
 then
 # This is the help section !!
   echo "Welcome to tuxart!"
-  echo "You can quickly generate your tux by typing ./tuxart.sh"
+  echo "You can quickly generate your tux by typing 'tuxart'"
   echo
-  echo "Specific arguments can be passed to ./tuxart.sh with the following syntax : "
+  echo "Specific arguments can be passed to tuxart with the following syntax : "
   echo
-  echo "        * ./tuxart.sh -f [filename]"
+  echo "        * tuxart -f [filename]"
   echo "                  This will generate a tux for the given configuration file"
   echo
-  echo "        * ./tuxart.sh --grid [path to linux kernel folder] [n]"
+  echo "        * tuxart --grid [path to linux kernel folder] [n]"
   echo "                  This will generate a grid of n tux. n = 4 if not specified"
   echo
-  echo "        * ./tuxart.sh --rgb [path to linux kernel folder]"
+  echo "        * tuxart --rgb [path to linux kernel folder]"
   echo "                  This will generate 3 tux corresponding to 3 linux kernel configuration with all possible options to yes, no or module"
   echo
-  echo "        * ./tuxart/sh --gif [path to linux kernel folder] [n]"
+  echo "        * tuxart --gif [path to linux kernel folder] [n]"
   echo "                  This will generate a .gif of n tux. n = 4 if not specified"
 
 # If non recognizible argument has been passed, throw an error
 else
-  echo "Bad syntax. Type ./tuxart -h for help..."
+  echo "Bad syntax. Type 'tuxart -h' for help..."
   exit 1
 fi
