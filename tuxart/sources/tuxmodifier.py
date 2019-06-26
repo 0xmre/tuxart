@@ -10,7 +10,8 @@ import os
 
 # Path to local files
 path = os.path.dirname(os.path.realpath(__file__))
-pathtomod = os.path.join(path, "tux_mod.svg")
+home = os.path.expanduser("~")
+pathtomod = os.path.join(home,"Pictures/tux_mod.svg")
 
 
 #
@@ -231,6 +232,6 @@ def tuxinit():
     global pathtomod
     pathtotux = os.path.join(path, "sprays/original_tux.svg")
     tux = open(pathtotux).read()
-    f=open(pathtomod, "w")
+    f=open(pathtomod, "w+")
     f.write(tux)
     f.close()
