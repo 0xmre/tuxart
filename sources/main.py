@@ -14,7 +14,7 @@ def main():
     tuxmodifier.tuxinit()
 
     # Fill dictionnary with configuration file's values
-    # key: name of the menu, value: configuration with value(y,m,n)
+    # key: name of the menuconfig, value: configuration with value(y,m,n)
     configparser.filldic(filename)
 
     # Painting time!
