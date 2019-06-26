@@ -1,12 +1,16 @@
 #!/bin/bash
+y="y"
+n="n"
 
 help="-help"
+OS=`lsb_release -si | tr '[:upper:]' '[:lower:]'`
+
 
 if [ "$1" = $help ]
 then	
-	echo "To use script please use : sudo su"
+	echo "To use script you have to be root usr : sudo su"
 	echo "Parameters goes : " 
-	echo "./tuxsplash (your distrib name lower case) (~/logo.png)"
+	echo "./tuxsplash (~/logo.png)" 
 	exit 1
 fi
 
@@ -19,15 +23,15 @@ if [ "$EUID" -ne 0 ]
 then 
 	echo "You are not logging in root usr, now exiting."
 	exit 1
-elif [ ! $# = 2 ]
+elif [ ! $# = 1 ]
 then
-	echo "Parameters missing, now exiting."
+	echo "Parameters are wrong, now exiting."
 	exit 1
 elif [ $res = $y ]
 then
 	cd /usr/share/plymouth/themes/*-logo
 	mv *-logo.png old-splash.png 
-	cp $2 ./$1-logo.png
+	cp $1 ./$OS-logo.png
 	update-initramfs -u
 	
 
