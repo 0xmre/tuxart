@@ -52,17 +52,17 @@ then
   progress 10 "Now looking for your configuration file..."
 
   # Creating folder for personal tux and personal kernel configuration file
-  mkdir -p PersonalTux
+  mkdir -p ~/Picture/PersonalTux
   progress 20 "Creating PersonalTux folder..."
 
   # Looking if .config is in /boot/config-***
-  cat /boot/config-$(uname -r) > PersonalTux/.config
+  cat /boot/config-$(uname -r) > ~/Pictures/PersonalTux/.config
 
   # If file has not found in previous folder, the program will look in /proc/config.gz
   if [ $? -ne 0 ]
   then
     progress 30 ".config not found in /boot, trying in /proc"
-    zcat /proc/config.gz > PersonalTux/.config
+    zcat /proc/config.gz > ~/Pictures/PersonalTux/.config
     # Checking if previous function produced errors
     if [ $? -ne 0 ]
     then
@@ -77,7 +77,7 @@ then
   progress 50 "Your personal Tux is getting assembled..."
 
   # Calling main function. Tux generator is on!
-  python3 main.py PersonalTux/.config
+  python3 sources/main.py ~/Pictures/PersonalTux/.config
 
   # Checking if previous function produced errors
   if [ $? -ne 0 ]
@@ -89,11 +89,11 @@ then
   progress 85 "Personal Tux successfully created..."
 
   # Moving tux in PersonalTux folder
-  mv tux_mod.svg PersonalTux/tux_mod.svg
+  mv tux_mod.svg ~/Pictures/PersonalTux/tux_mod.svg
   progress 99 "Your Tux is available in PersonalTux folder..."
 
   # Ending the job!
-  timeout 10 display PersonalTux/tux_mod.svg &
+  timeout 10 display ~/Pictures/PersonalTux/tux_mod.svg &
   progress 100
 # Checking if parameter -f is passed
 elif [ $1 = "-f" ]

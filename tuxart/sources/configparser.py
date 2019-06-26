@@ -1,7 +1,7 @@
 import string
 import re
 
-#globalcontainer : dictionnary holding pairs {'Configuration menu' : 'list of configurations'}
+#globalcontainer : dictionnary holding pairs {'Configuration menu' : [list of configurations]}
 #contents : intermediary value holding .config file content in plain text
 globalcontainer = {}
 contents = ""
