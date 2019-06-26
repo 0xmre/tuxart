@@ -4,7 +4,7 @@
 
 
 
-![tux grid](examples/TuxFamily.png)
+![tux grid](tuxart/examples/TuxFamily.png)
 
 
 This program will fetch for your running Kernel's configuration file and then generate an unique Tux based on the current active configurations on your kernel.
@@ -37,17 +37,25 @@ Type `tuxart -h` or `tuxart --help` for help from terminal
 
 Various options are available if you already have a linux kernel.*
 You can either :
-- **generate a grid of Tux**
+- **generate a grid of Tux** (like the one in the header)
 - **generate a .gif of Tux**
-                 ![tux gif][examples/SuperTux.gif]
- - **summon elemenTux** ( all configurations set to yes, no or module )
+
+![Super gif][tuxart/examples/SuperTux.gif]
+ 
+ - **summon elemenTux** ( all configurations set to yes, module or no )
+ 
+ 
+ ![Red tux](tuxart/examples/redtux.svg)
+ ![Green tux](tuxart/examples/greentux.svg)
+ ![Blue tux](tuxart/examples/bluetux.svg)
+
 
 ### RUN OPTIONS
 
    - From terminal type :
-	   -`tuxart --grid [path to kernel folder] [number of tux, default = 4]`
-       -`tuxart --gif [path to kernel folder] [number of tux, default = 4]`
-       -`tuxart --rgb [path to kernel folder]`
+   	-`tuxart --grid [path to kernel folder] [number of tux, default = 4]`
+	-`tuxart --gif [path to kernel folder] [number of tux, default = 4]`
+	-`tuxart --rgb [path to kernel folder]`
 
 
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
