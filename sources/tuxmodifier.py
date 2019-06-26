@@ -25,7 +25,7 @@ right_palm = ['right_palm_shadow_1', 'right_palm_shadow_2', 'right_palm_shadow_3
 def accessoryhandler():
     # index in both lists links an item with a configuration
     configs = ["CONFIG_FTRACE","CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE","CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE","CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE","CONFIG_ENCRYPTED_KEYS","CONFIG_USB_USBNET"]
-    items = ["eyepatch","helmet1","helmet2","helmet3","shield","cape"]
+    items = ["eyepatch","helmet1","helmet2","helmet3","shield","cape","glasses1","glasses11"]
 
     for config, item in zip(configs,items):
         if configparser.isconfigenabled(config):
@@ -144,7 +144,7 @@ def tuxcolorizer():
                     modify(reflection, zone)
                 else:
                     modify(color1, zone)
-                    
+
 # Add argument item to tux_mod.svg
 def addaccessory(item):
     """
