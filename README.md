@@ -67,4 +67,11 @@ You can either :
 
 
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
-Unpack the archive and run one of the command lines from above with the path to the archive's folder passed as argument.
+Unpack the archive and run one of the command lines from above with the path to the archive's folder passed as argument.*
+
+
+### The future of tuxart
+
+While working with randomly generated kernels, a visual feedback can increase the comprehension of the latters.
+
+Visual feedback can be improved by increasing choice between custom accessories. This kind of benefits can be achieved by adding more accessories and by fully respecting dependencies between related configurations.

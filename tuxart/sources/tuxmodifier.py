@@ -75,7 +75,7 @@ def tuxcolorizer():
             color1 = colorengine.hexformat('river')
             color2 = colorengine.modifycolor(color1,-40)
             reflection = colorengine.reflectioncolor(color1)
-            shadow = colorengine.shadowcolor(color2)
+            shadow = colorengine.shadowcolor(color1)
             for zone in beak:
                 if 'nostril' in zone:
                     modify(color1,zone)
