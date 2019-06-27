@@ -37,6 +37,7 @@ Type `tuxart -h` or `tuxart --help` for help from terminal
 ## OPTIONS:
 
 Various options are available if you already have a linux kernel.*
+
 You can either :
 - **generate a grid of Tux** (like the one in the header)
 - **generate a .gif of Tux**
