@@ -1,0 +1,385 @@
+<svg id="mermaid-1561659743222" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:850px;" viewBox="-50 -10 850 1203"><style>
+
+
+#mermaid-1561659743222 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333; }
+
+#mermaid-1561659743222 .node rect,
+#mermaid-1561659743222 .node circle,
+#mermaid-1561659743222 .node ellipse,
+#mermaid-1561659743222 .node polygon {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1561659743222 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1561659743222 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1561659743222 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1561659743222 .edgeLabel {
+  background-color: #e8e8e8; }
+
+#mermaid-1561659743222 .cluster rect {
+  fill: #ffffde;
+  stroke: #aaaa33;
+  stroke-width: 1px; }
+
+#mermaid-1561659743222 .cluster text {
+  fill: #333; }
+
+#mermaid-1561659743222 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1561659743222 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1561659743222 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1561659743222 .actor-line {
+  stroke: grey; }
+
+#mermaid-1561659743222 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1561659743222 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1561659743222 #arrowhead {
+  fill: #333; }
+
+#mermaid-1561659743222 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1561659743222 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1561659743222 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1561659743222 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1561659743222 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1561659743222 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1561659743222 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1561659743222 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px; }
+
+#mermaid-1561659743222 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1561659743222 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1561659743222 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1561659743222 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1561659743222 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1561659743222 .section2 {
+  fill: #fff400; }
+
+#mermaid-1561659743222 .section1,
+#mermaid-1561659743222 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1561659743222 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1561659743222 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1561659743222 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1561659743222 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1561659743222 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px; }
+
+
+#mermaid-1561659743222 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges; }
+
+#mermaid-1561659743222 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1561659743222 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1561659743222 .task {
+  stroke-width: 2; }
+
+#mermaid-1561659743222 .taskText {
+  text-anchor: middle;
+  font-size: 11px; }
+
+#mermaid-1561659743222 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px; }
+
+#mermaid-1561659743222 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1561659743222 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1561659743222 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1561659743222 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1561659743222 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1561659743222 .taskText0,
+#mermaid-1561659743222 .taskText1,
+#mermaid-1561659743222 .taskText2,
+#mermaid-1561659743222 .taskText3 {
+  fill: white; }
+
+#mermaid-1561659743222 .task0,
+#mermaid-1561659743222 .task1,
+#mermaid-1561659743222 .task2,
+#mermaid-1561659743222 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1561659743222 .taskTextOutside0,
+#mermaid-1561659743222 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1561659743222 .taskTextOutside1,
+#mermaid-1561659743222 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1561659743222 .active0,
+#mermaid-1561659743222 .active1,
+#mermaid-1561659743222 .active2,
+#mermaid-1561659743222 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1561659743222 .activeText0,
+#mermaid-1561659743222 .activeText1,
+#mermaid-1561659743222 .activeText2,
+#mermaid-1561659743222 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1561659743222 .done0,
+#mermaid-1561659743222 .done1,
+#mermaid-1561659743222 .done2,
+#mermaid-1561659743222 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1561659743222 .doneText0,
+#mermaid-1561659743222 .doneText1,
+#mermaid-1561659743222 .doneText2,
+#mermaid-1561659743222 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1561659743222 .crit0,
+#mermaid-1561659743222 .crit1,
+#mermaid-1561659743222 .crit2,
+#mermaid-1561659743222 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1561659743222 .activeCrit0,
+#mermaid-1561659743222 .activeCrit1,
+#mermaid-1561659743222 .activeCrit2,
+#mermaid-1561659743222 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1561659743222 .doneCrit0,
+#mermaid-1561659743222 .doneCrit1,
+#mermaid-1561659743222 .doneCrit2,
+#mermaid-1561659743222 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1561659743222 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1561659743222 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1561659743222 .doneCritText0,
+#mermaid-1561659743222 .doneCritText1,
+#mermaid-1561659743222 .doneCritText2,
+#mermaid-1561659743222 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1561659743222 .activeCritText0,
+#mermaid-1561659743222 .activeCritText1,
+#mermaid-1561659743222 .activeCritText2,
+#mermaid-1561659743222 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1561659743222 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black; }
+
+#mermaid-1561659743222 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px; }
+
+#mermaid-1561659743222 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1561659743222 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1561659743222 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1561659743222 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1561659743222 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1561659743222 .commit-id,
+#mermaid-1561659743222 .commit-msg,
+#mermaid-1561659743222 .branch-label {
+  fill: lightgrey;
+  color: lightgrey; }
+</style><style>#mermaid-1561659743222 {
+    color: rgba(0, 0, 0, 0.65);
+    font: ;
+  }</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="1192" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="75" dy="0">main.py</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="1192" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="275" dy="0">tuxmodifier.py</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="1192" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="475" dy="0">colorengine.py</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="1192" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="675" dy="0">configparser.py</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" style="stroke-dasharray: 0px, 0px;" stroke-width="1px" d="M 9,2 V 6 L16,4 Z"></path><path fill="none" stroke="#000000" style="stroke-dasharray: 0px, 0px;" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7"></path></marker></defs><g><text x="175" y="93" style="text-anchor: middle;" class="messageText">tuxinit()</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><rect x="100" y="110" fill="#EDF2AE" stroke="#666" width="150" height="52" rx="0" ry="0" class="note"></rect><text x="96" y="134" class="noteText"><tspan x="116">Create tux_mod.svg </tspan></text><text x="96" y="150" class="noteText"><tspan x="116">(tux is waking up..)</tspan></text></g><g><text x="375" y="190" style="text-anchor: middle;" class="messageText">filldic()</text><line x1="75" y1="197" x2="675" y2="197" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><rect x="500" y="207" fill="#EDF2AE" stroke="#666" width="150" height="68" rx="0" ry="0" class="note"></rect><text x="496" y="231" class="noteText"><tspan x="516">All configurations of</tspan></text><text x="496" y="247" class="noteText"><tspan x="516">the .config file are</tspan></text><text x="496" y="263" class="noteText"><tspan x="516">stored in globalcontainer</tspan></text></g><g><text x="175" y="303" style="text-anchor: middle;" class="messageText">tuxcolorizer()</text><line x1="75" y1="310" x2="275" y2="310" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><text x="375" y="338" style="text-anchor: middle;" class="messageText">hexformat(menuconfig)</text><line x1="275" y1="345" x2="475" y2="345" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><rect x="300" y="355" fill="#EDF2AE" stroke="#666" width="150" height="84" rx="0" ry="0" class="note"></rect><text x="296" y="379" class="noteText"><tspan x="316">Here we build the</tspan></text><text x="296" y="395" class="noteText"><tspan x="316">color with the triplet</tspan></text><text x="296" y="411" class="noteText"><tspan x="316">composed of the values</tspan></text><text x="296" y="427" class="noteText"><tspan x="316">y, m and n</tspan></text></g><g><text x="575" y="467" style="text-anchor: middle;" class="messageText">countconfig(value,menuconfig)</text><line x1="475" y1="474" x2="675" y2="474" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><text x="375" y="502" style="text-anchor: middle;" class="messageText">color in hexadecimal</text><line x1="475" y1="509" x2="275" y2="509" style="stroke-dasharray: 3px, 3px; fill: none;" class="messageLine1" stroke-width="2" stroke="black"></line></g><g><rect x="300" y="519" fill="#EDF2AE" stroke="#666" width="150" height="68" rx="0" ry="0" class="note"></rect><text x="296" y="543" class="noteText"><tspan x="316">We also call other</tspan></text><text x="296" y="559" class="noteText"><tspan x="316"> function in colorengine</tspan></text><text x="296" y="575" class="noteText"><tspan x="316">to beautify the tux</tspan></text></g><g><text x="275" y="640" style="text-anchor: middle;" class="messageText">apply to each part of the tux the associated color</text><path d="M 275,647 C 335,637 335,677 275,667" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></path></g><g><line x1="111" y1="597" x2="439" y2="597" class="loopLine"></line><line x1="439" y1="597" x2="439" y2="687" class="loopLine"></line><line x1="111" y1="687" x2="439" y2="687" class="loopLine"></line><line x1="111" y1="597" x2="111" y2="687" class="loopLine"></line><polygon points="111,597 161,597 161,610 152.6,617 111,617" class="labelBox"></polygon><text x="118.5" y="612" class="labelText"><tspan x="118.5">loop</tspan></text><text x="275" y="612" style="text-anchor: middle;" class="loopText"><tspan x="275">[ modify(color,bodypart) ]</tspan></text></g><g><rect x="100" y="697" fill="#EDF2AE" stroke="#666" width="150" height="68" rx="0" ry="0" class="note"></rect><text x="96" y="721" class="noteText"><tspan x="116">Tux is full of color !</tspan></text><text x="96" y="737" class="noteText"><tspan x="116">Let's add some item</tspan></text><text x="96" y="753" class="noteText"><tspan x="116"> If he can found one..</tspan></text></g><g><text x="175" y="793" style="text-anchor: middle;" class="messageText">accessoryhandler()</text><line x1="75" y1="800" x2="275" y2="800" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><text x="475" y="853" style="text-anchor: middle;" class="messageText">isconfigenabled(configname)</text><line x1="275" y1="860" x2="675" y2="860" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></line></g><g><rect x="500" y="870" fill="#EDF2AE" stroke="#666" width="150" height="100" rx="0" ry="0" class="note"></rect><text x="496" y="894" class="noteText"><tspan x="516">We chose specific</tspan></text><text x="496" y="910" class="noteText"><tspan x="516">configuration and if it</tspan></text><text x="496" y="926" class="noteText"><tspan x="516">is enabled Tux take</tspan></text><text x="496" y="942" class="noteText"><tspan x="516"> the associated</tspan></text><text x="496" y="958" class="noteText"><tspan x="516">accessory</tspan></text></g><g><text x="275" y="998" style="text-anchor: middle;" class="messageText">addaccessory(item)</text><path d="M 275,1005 C 335,995 335,1035 275,1025" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"></path></g><g><line x1="165" y1="810" x2="685" y2="810" class="loopLine"></line><line x1="685" y1="810" x2="685" y2="1045" class="loopLine"></line><line x1="165" y1="1045" x2="685" y2="1045" class="loopLine"></line><line x1="165" y1="810" x2="165" y2="1045" class="loopLine"></line><polygon points="165,810 215,810 215,823 206.6,830 165,830" class="labelBox"></polygon><text x="172.5" y="825" class="labelText"><tspan x="172.5">loop</tspan></text><text x="425" y="825" style="text-anchor: middle;" class="loopText"><tspan x="425">[  ]</tspan></text></g><g><rect x="0" y="1055" fill="#EDF2AE" stroke="#666" width="150" height="52" rx="0" ry="0" class="note"></rect><text x="-4" y="1079" class="noteText"><tspan x="16">Finally Tux is ready</tspan></text><text x="-4" y="1095" class="noteText"><tspan x="16">to be seen!</tspan></text></g><g><rect x="0" y="1127" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="1159.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="75" dy="0">main.py</tspan></text></g><g><rect x="200" y="1127" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="1159.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="275" dy="0">tuxmodifier.py</tspan></text></g><g><rect x="400" y="1127" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="1159.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="475" dy="0">colorengine.py</tspan></text></g><g><rect x="600" y="1127" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="1159.5" style="text-anchor: middle; font-family: &quot;Open-Sans&quot;, &quot;sans-serif&quot;;" dominant-baseline="central" alignment-baseline="central" class="actor"><tspan x="675" dy="0">configparser.py</tspan></text></g></svg>
