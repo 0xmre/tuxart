@@ -1,3 +1,23 @@
+### The relation between Tux and the configuration file
+How does the configuration file visually affect the Tux?
+We proceed two different modification on the tux.
+- The coloration of the Tux:
+We have associated different body part of the Tux to a key word in a dictionary fill with the .config file then we produce a triplet containing the number of options set to yes, module and no. We assume that triplet as a RGB color then we turn it in a hexadecimal color. Finally every body part is colored with its own color.
+- The add of accessory:
+We wanted the accessory to not be a common thing so we have associated specific configuration options to different accessory.. And if the options is enable then Tux have the accessory!
+
+## The programm step by step
+
+- First of all we need to create a new Tux without any changes yet with tuxmodifier.tuxinit() .
+- Then we load all of the selected options from a menuconfig in a global variable **gc** (for globalcontainer) with configparser.filldic() . Now we have a dictionnary with *key=name of the menuconfig* and *value=list of options name and their values (y, m or n)*.
+- Now the modifications begins.. Lets call tuxmodifier.tuxcolorizer()
+ As said above we create an hexadecimal color with colorengine.hexformat(menuconfig). This function calls configparser.countconfig(value, menuconfig) with the value y, m and n and returns the hexadecimal color corresponding to the triplet (y, m, n).
+ - Lets apply to each part of the tux the associated color with the function tuxmodifier.modify(color, bodypart) .
+ - The last part is the call of tuxmodifier.accessoryhandler()
+ We check if a configuration option is enable (its value set to yes or module) with configparser.isconfigenabled(configname) and if it return true we add an accessory with tuxmodifier.addaccesory(item)
+ 
+![Seq diagr](tuxart/examples/executionexemple.svg)
+
 - HOW TO ADD A NEW ACCESSORY
 
 There are several instructions to follow to correctly add a new accessory in the tuxart project :
