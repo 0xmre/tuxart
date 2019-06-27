@@ -1,12 +1,12 @@
 import string
 import re
 import collections
-import configparser
 import tuxmodifier
+import configparser
 import sys
 
 def main():
-    
+
     # If you choose to put your own .config file
     if sys.argv[1]:
         filename = sys.argv[1]

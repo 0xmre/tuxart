@@ -1,6 +1,7 @@
 import struct
 import configparser
 
+
 # Construction of the RGB triplet
 # base on the triplet (y,m,n)
 def hexformat(configmenu):

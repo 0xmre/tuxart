@@ -3,8 +3,9 @@ import xml.dom.minidom
 import re
 import xml.sax
 import xml.dom
-import configparser
 import colorengine
+import configparser
+
 import os
 
 

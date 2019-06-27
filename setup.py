@@ -4,7 +4,7 @@ with open("README.md", "r") as ld:
     long_description = ld.read()
 
 setup(name='tuxart',
-      version='3',
+      version='3.2',
       description='Tux generator for arbitrary kernel',
       url='https://github.com/HommeOursPorc/tuxart',
       author='Khaled Arsalane, Eliot Marie, Pierre Pouteau, Richard Faraji-Huon, Zakariae Boukhchen',
@@ -12,7 +12,7 @@ setup(name='tuxart',
       license='MIT',
       scripts=['bin/tuxart'],
       packages=['sources'],
-      package_dir={'sources':'tuxart/sources'},
+      package_dir={'':'tuxart'},
       package_data={'sources':['sprays/*.svg']},
       install_requires=[
           'kconfiglib','cairosvg',

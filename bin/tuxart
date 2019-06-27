@@ -77,7 +77,7 @@ then
   progress 50 "Your personal Tux is getting assembled..."
 
   # Calling main function. Tux generator is on!
-  python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/PersonalTux/.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/PersonalTux/.config
 
   # Checking if previous function produced errors
   if [ $? -ne 0 ]
@@ -114,7 +114,7 @@ then
   progress 50 "Your custom Tux is getting assembled..."
 
   # Calling main fonction, tux generator is on!
-  python3 /usr/local/lib/python3.7/dist-packages/sources/main.py $2
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py $2
   if [ $? -ne 0 ]
   then
     echo "\nFailed to create CustomTux..."
@@ -148,7 +148,7 @@ then
     mkdir -p ~/Pictures/TuxGallery
     progress 10 "Creating TuxGallery folder..."
 
-    # Cleaning folder if it's full
+    # Cleaning folder if it's not empty
     if [ "$(ls -A ~/Pictures/TuxGallery/)" ]; then rm ~/Pictures/TuxGallery/*; fi
 
     # Checking if number of tux to produce has been specified
@@ -190,7 +190,7 @@ then
       mv $2/.config ~/Pictures/TuxGallery/.config$i
 
       # Calling main function! Tux generator is on!
-      python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
+      python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
       if [ $? -ne 0 ]
       then
         echo -e "\nFailed to create randomTux..."
@@ -208,7 +208,7 @@ then
     # Creating grid of tuxes
     progress 90 "Generating .png grid..."
     montage -density 300 -geometry +5+50 -border 5 ~/Pictures/TuxGallery/tux_mod*.png ~/Pictures/TuxGallery/TuxFamily.png
-    progress 99 "TuxFamily.png is here! Check TuxGallery folder"
+    progress 99 "TuxFamily.png is here! Check it in ~/Pictures/TuxGallery"
 
     # Displaying image for 10 seconds
     timeout 10 display ~/Pictures/TuxGallery/TuxFamily.png &
@@ -235,7 +235,7 @@ then
       mkdir -p ~/Pictures/TuxGallery
       progress 10 "Creating TuxGallery folder..."
 
-      # Cleaning folder if it's full
+      # Cleaning folder if it's not empty
       if [ "$(ls -A ~/Pictures/TuxGallery/)" ]; then rm ~/Pictures/TuxGallery/*; fi
 
       # Checking if number of tux to produce has been specified
@@ -277,7 +277,7 @@ then
         mv $2/.config ~/Pictures/TuxGallery/.config$i
 
         # Calling main function! Tux generator is on!
-        python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
+        python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/TuxGallery/.config$i
         if [ $? -ne 0 ]
         then
           echo -e "\nFailed to create randomTux..."
@@ -293,9 +293,9 @@ then
       done
 
       # Creating grid of tuxes
-      progress 90 "Generating .png grid..."
+      progress 90 "Generating .gif..."
       convert -delay 100 -loop 0 ~/Pictures/TuxGallery/tux_mod*.png ~/Pictures/TuxGallery/SuperTux.gif
-      progress 99 "SuperTux.gif is here! Check TuxGallery folder"
+      progress 99 "SuperTux.gif is here! Check it in ~/Pictures/TuxGallery"
 
       # Displaying image for 10 seconds
       display ~/Pictures/TuxGallery/SuperTux.gif &
@@ -318,7 +318,7 @@ then
     exit 1
   fi
 
-  # Cleaning tuxRGB folder if not empty
+  # Cleaning tuxRGB folder if it's not empty
   if [ "$(ls -A ~/Pictures/tuxRGB/)" ]; then rm ~/Pictures/tuxRGB/*; fi
   cd $2
 
@@ -343,7 +343,7 @@ then
 
   # Generating tuxes frmo allyesconfig, allnoconfig and allmodconfig
   progress 50 "Generating Fire Tux"
-  python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/tuxRGB/allyes.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allyes.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Fire Tux..."
@@ -352,7 +352,7 @@ then
   mv ~/Pictures/tux_mod.svg  ~/Pictures/tuxRGB/redtux.svg
 
   progress 60 "Generating Aqua Tux"
-  python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/tuxRGB/allno.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allno.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Aqua Tux..."
@@ -361,7 +361,7 @@ then
   mv ~/Pictures/tux_mod.svg  ~/Pictures/tuxRGB/bluetux.svg
 
   progress 70 "Generating Leaf Tux"
-  python3 /usr/local/lib/python3.7/dist-packages/sources/main.py ~/Pictures/tuxRGB/allmod.config
+  python3 ~/.local/lib/python3.7/site-packages/sources/main.py ~/Pictures/tuxRGB/allmod.config
   if [ $? -ne 0 ]
   then
     echo -e "\nFailed to create Leaf Tux..."
