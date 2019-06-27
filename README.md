@@ -1,5 +1,6 @@
 
 
+
 # WELCOME TO TUXART
 
 
@@ -17,18 +18,18 @@ An arbitrary kernel configuration file can be passed as argument, output file wi
 ## DOWNLOAD AND INSTALL INSTRUCTIONS:
 
 - From terminal type
--`sudo pip3 install tuxart --install-option="--install-scripts=/usr/local/bin"`
+	- `sudo pip3 install tuxart --install-option="--install-scripts=/usr/local/bin"`
 
 
 
 ### RUN TUXART
 
 - From terminal type
--`tuxart`
+	- `tuxart`
 
 If you want to pass your custom configuration file:
 - From terminal type
- -`tuxart -f [configuration file]`
+	- `tuxart -f [configuration file]`
 
 Type `tuxart -h` or `tuxart --help` for help from terminal
 
@@ -40,7 +41,7 @@ You can either :
 - **generate a grid of Tux** (like the one in the header)
 - **generate a .gif of Tux**
 
-![Super gif][tuxart/examples/SuperTux.gif]
+![](tuxart/examples/SuperTux.gif)
  
  - **summon elemenTux** ( all configurations set to yes, module or no )
  
@@ -53,10 +54,10 @@ You can either :
 ### RUN OPTIONS
 
    - From terminal type :
-   	-`tuxart --grid [path to kernel folder] [number of tux, default = 4]`
-	-`tuxart --gif [path to kernel folder] [number of tux, default = 4]`
-	-`tuxart --rgb [path to kernel folder]`
+	   - `tuxart --grid [path to kernel folder] [number of tux, default = 4]`
+	   - `tuxart --gif [path to kernel folder] [number of tux, default = 4]`
+	   - `tuxart --rgb [path to kernel folder]`
 
 
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
-Unpack the archive and run ./demo-png.sh with the path to the archive's folder passed as argument.
+Unpack the archive and run one of the command lines from above with the path to the archive's folder passed as argument.
