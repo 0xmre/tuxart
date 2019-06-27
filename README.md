@@ -3,6 +3,10 @@
 
 # WELCOME TO TUXART
 
+## CONTEXT
+The Linux kernel contains over 15000 configuration options, most of them take 3 different value (yes, no or module).
+So theorically there are 3^15000 possible configuration files of the Linux kernel.
+The **goal** of tuxart is to create as many different Tuxes as possible configuration files.
 
 
 ![tux grid](tuxart/examples/TuxFamily.png)
@@ -43,10 +47,10 @@ You can either :
 - **generate a .gif of Tux**
 
 ![](tuxart/examples/SuperTux.gif)
- 
+
  - **summon elemenTux** ( all configurations set to yes, module or no )
- 
- 
+
+
  ![Red tux](tuxart/examples/redtux.svg)
  ![Green tux](tuxart/examples/greentux.svg)
  ![Blue tux](tuxart/examples/bluetux.svg)
