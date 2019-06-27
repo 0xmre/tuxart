@@ -22,7 +22,8 @@ An arbitrary kernel configuration file can be passed as argument, output file wi
 ## DOWNLOAD AND INSTALL INSTRUCTIONS:
 
 - From terminal type
-	- `pip3 install tuxart --user --install-option="--install-scripts=~/.local/bin"`
+	- `wget "https://github.com/HommeOursPorc/tuxart/blob/master/dist/tuxart-3.2.tar.gz"`
+	- `pip3 install tuxart-3.2.tar.gz --user --install-option="--install-scripts=~/.local/bin"`
 - Then add `~/.local/bin` to your command line with
 	- `export PATH=$PATH:~/.local/bin`
 
