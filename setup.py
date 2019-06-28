@@ -20,5 +20,5 @@ setup(name='tuxart',
       zip_safe=False,
       classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache License 2.0",
       ])
