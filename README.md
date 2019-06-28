@@ -3,6 +3,9 @@
 
 # WELCOME TO TUXART
 
+The first question you might ask if your are not familiar with Linux is what is Tux ?
+Well basically [Tux](https://en.wikipedia.org/wiki/Tux_(mascot)) (link to the wiki) is a penguin and the official mascot of the Linux kernel.
+
 ## CONTEXT
 The Linux kernel contains over 15000 configuration options, most of them take 3 different value (yes, no or module).
 So theorically there are 3^15000 possible configuration files of the Linux kernel.
@@ -76,3 +79,7 @@ Unpack the archive and run one of the command lines from above with the path to 
 While working with randomly generated kernels, a visual feedback can increase the comprehension of the latters.
 
 Visual feedback can be improved by increasing choice between custom accessories. This kind of benefits can be achieved by adding more accessories and by fully respecting dependencies between related configurations.
+
+#### KNOWN ISSUES
+- Loading bar get overwritten in --grid and --gif options
+- Misconfiguration of the installation folder when .tar is download from pypi
