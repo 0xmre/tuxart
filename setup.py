@@ -4,7 +4,7 @@ with open("README.md", "r") as ld:
     long_description = ld.read()
 
 setup(name='tuxart',
-      version='3.2',
+      version='3.2.1',
       description='Tux generator for arbitrary kernel',
       url='https://github.com/HommeOursPorc/tuxart',
       author='Khaled Arsalane, Eliot Marie, Pierre Pouteau, Richard Faraji-Huon, Zakariae Boukhchen',
