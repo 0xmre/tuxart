@@ -3,7 +3,7 @@
 
 # WELCOME TO TUXART
 
-The first question you might ask if your are not familiar with Linux is what is Tux ?
+The first question you might ask if you are not familiar with Linux is what is Tux ?
 Well basically [Tux](https://en.wikipedia.org/wiki/Tux_(mascot)) (link to the wiki) is a penguin and the official mascot of the Linux kernel.
 
 ## CONTEXT
@@ -52,7 +52,7 @@ You can either :
 - **generate a grid of Tux** (like the one in the header)
 - **generate a .gif of Tux**
 
-![](tuxart/examples/SuperTux.gif)
+![Super Tux](tuxart/examples/SuperTux.gif)
 
  - **summon elemenTux** ( all configurations set to yes, module or no )
 
@@ -73,6 +73,9 @@ You can either :
 *If you don't have a kernel, download one from https://www.linux-mips.org/pub/linux/mips/kernel/v4.x/
 Unpack the archive and run one of the command lines from above with the path to the archive's folder passed as argument.*
 
+
+
+##### If you are interested in how tuxart work I suggest you to read the [DESIGN.md](./DESIGN.md) file
 
 ### The future of tuxart
 
