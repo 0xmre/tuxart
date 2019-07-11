@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg2"
+    sodipodi:docname="helmet3"
+    viewBox="0 0 990 765"
+    version="1.1"
+    inkscape:version="0.47pre4 r22446"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="0"
+      pagecolor="#ffffff"
+      inkscape:window-height="825"
+      inkscape:window-maximized="1"
+      inkscape:zoom="0.5485842"
+      inkscape:window-x="0"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="90.704333"
+      inkscape:cy="356.71397"
+      inkscape:window-width="1600"
+      inkscape:pageopacity="0.0"
+      inkscape:document-units="px"
+  />
+  <g
+      id="helmet3"
+      inkscape:label="helmet3"
+      inkscape:groupmode="helmet3"
+      transform="translate(245 -80), scale(-0.2 0.2)"
+    >
+    <g
+        id="g3677"
+        transform="matrix(2.1157 0 0 2.0881 -140.06 -990.91)"
+      >
+      <path
+          id="path2890"
+          style="stroke:#000000;stroke-width:1px;fill:#000000"
+          d="m122 745.36 10-9 14-2 15 1 19 4 19 6 17 8 17 10 21 14 18 17 15 15 16 12 15 12 14 8 16 3 14-2 18-10 14-10 12-15 11-10 13-14 10-12 8-12 4-8 7-2 8 2 7 3v7l-10 15-9 17-12 17-6 12-10 11-9 7-15 7-7 4-7 6-9 5-14 5-19 4-17 2-12-1-14-5-34-13-18-8-13-5-13-5-11-7-8-3-9-3-11-7-18-16-16-18-14-15-8-10-9-12z"
+      />
+      <g
+          id="g3672"
+          transform="translate(-450.25 236.06)"
+        >
+        <path
+            id="path2892"
+            sodipodi:nodetypes="cccccccccccccccaccccccccccaacccccccccccc"
+            style="stroke:#000000;stroke-width:1px;fill:#000000"
+            d="m902 514.36-17-8-14-5-15-5-6-9-8-8-10-7-16-6-17-4-21-3-17-1-21-1-18 2-13 2-14 4s-7.7237 2.1546-11.25 4c-3.5448 1.8551-9.75 7-9.75 7l-7 9-16 2-22 5-11 3-9 3 17 3 22 6 23 11 16 9s13.273 7.8918 19 13c4.9376 4.4043 8.3423 10.301 13 15 5.3199 5.3674 17 15 17 15l15 15 22 13 16 8 17 2 16-7 17-13 18-16 12-14 11-14 12-13 10-17z"
+        />
+        <path
+            id="path2894"
+            style="fill-opacity:.35524;stroke:#d0a10a;stroke-width:3;fill:#d0a10a"
+            d="m608.9 498.94 18.385-6.364 15.556-2.8284 13.435-2.1213 9.8995-0.7071"
+        />
+        <path
+            id="path3668"
+            style="fill-opacity:.86667;stroke:#d0a10a;stroke-width:3;fill:#ffc400"
+            d="m856.82 496.33 15.556 4.2426 12.728 4.9498 9.8995 4.9498 7.0711 4.2426"
+        />
+      </g>
+      <path
+          id="path3670"
+          sodipodi:nodetypes="cacccccccccccccccccccccccccccccc"
+          style="stroke:#d0a10a;stroke-width:3;fill:none"
+          d="m122.13 743.84s5.1021-4.836 8.2029-6.3801c3.6614-1.8232 11.849-3.19 11.849-3.19l15.494 0.91144 17.317 2.7343 18.229 4.5572 20.052 9.1144 11.849 6.3801 15.494 10.026 14.583 10.026 13.672 12.76 11.849 12.76 14.127 11.849 12.304 9.1144 10.937 8.2029 11.849 6.3801 14.583 3.6457 10.937-0.91143 14.127-4.5572 11.393-6.3801 12.304-9.1144 8.6587-9.1144 10.937-10.937 9.1144-10.026 9.1144-10.937 9.1144-9.5701 6.38-9.1144 3.6458-9.5701 5.4686-2.7343h7.2915l6.3801 1.8229 5.9244 5.0129"
+      />
+    </g>
+  </g>
+  <g id="mark"/>
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Minuteman Hat</dc:title
+        >
+        <dc:date
+          >2010-06-13T08:42:18</dc:date
+        >
+        <dc:description
+          >Minute Man Hat</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/66577/minuteman-hat-by-s9393</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >s9393</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >hat</rdf:li
+            >
+            <rdf:li
+              >minuteman</rdf:li
+            >
+            <rdf:li
+              >patriot</rdf:li
+            >
+            <rdf:li
+              >revolution</rdf:li
+            >
+            <rdf:li
+              >uniform</rdf:li
+            >
+            <rdf:li
+              >war</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
